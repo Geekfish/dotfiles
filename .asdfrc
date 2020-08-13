@@ -1,0 +1,11 @@
+# Init asdf-vm and completions
+#
+# UPDATE [03/04/2020]:
+# The asdf zsh completion plugin doesn't initialise
+# completions correctly.
+# So we have to do this here manually
+
+. $HOME/.asdf/asdf.sh
+
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit

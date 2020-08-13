@@ -1,0 +1,38 @@
+source /usr/local/share/antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle pip
+antigen bundle command-not-found
+antigen bundle osx
+antigen bundle vi-mode
+antigen bundle history-substring-search
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
+# Rebase helper
+antigen bundle smallhadroncollider/antigen-git-rebase
+
+# Load the theme.
+antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+
+# Tell Antigen that you're done.
+antigen apply
+
+# zsh-history-substring-search configuration
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
+
+# Bullettrain theme options
+BULLETTRAIN_PROMPT_ORDER=(
+  time
+  dir
+  git
+  status
+  cmd_exec_time
+)
+
