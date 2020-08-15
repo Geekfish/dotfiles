@@ -48,6 +48,7 @@ Usually don't need to be install straight away.
 #### Must-have
 
 - 💻 [Visual Studio Code](https://code.visualstudio.com/)
+  <br>Use [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) pointing to the correct Gist.
 - 📯 [Postman](https://www.postman.com/downloads/)
 - 🌐 [Chrome](https://www.google.com/chrome/)
 - With brew:
