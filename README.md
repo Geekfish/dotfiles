@@ -95,4 +95,4 @@ Depending on current projects
 
 
 ---
-<sup>1</sup> Requires subscription (but might also have a free plan)
+<sup>1</sup> Requires license/subscription (but might also have a free plan)
