@@ -83,7 +83,7 @@ Usually don't need to be install straight away.
 Depending on current projects
 
 - 🐘 [Postgres.app](https://postgresapp.com/)
-- 🐍 [PyCharm](https://www.jetbrains.com/pycharm/)
+- 🐍 [PyCharm](https://www.jetbrains.com/pycharm/)<sup>1</sup>
 - 🐳 [Docker](https://www.docker.com/products/docker-desktop)
 - With brew:
   ```zsh
