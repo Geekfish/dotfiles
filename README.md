@@ -4,6 +4,8 @@ Just my dotfiles and other setup resources.
 
 ## New Laptop Setup
 
+Before installing the dotfiles it may be a good idea to install some of the things below.
+
 ### General
 
 #### Essentials
@@ -93,6 +95,15 @@ Depending on current projects
     basex                # XML database and XPath/XQuery processor
   ```
 
+### Dotfiles
+
+Assuming you checkout this repo in your `$HOME` directory, you can run the following to symlink all the dotfiles:
+
+```zsh
+ln -siF dotfiles/.*(.) .
+```
+
+⚠️ The above will prompt you about replacing existing dotfiles in case there's something you'd rather keep. The `.git` directory (and any other directory) is ignored.
 
 ---
 <sup>1</sup> Requires license/subscription (but might also have a free plan)
