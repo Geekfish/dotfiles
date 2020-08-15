@@ -15,6 +15,7 @@
         - [Must-have](#must-have)
         - [Optional](#optional)
     - [Dotfiles](#dotfiles)
+    - [Installing Erlang](#installing-erlang)
 
 <!-- /TOC -->
 ## About
@@ -110,7 +111,6 @@ Depending on current projects
   ```zsh
   brew install \
     kubernetes-cli       # Kubernetes utils
-    wxmac                # wxwidgets to compile Erlang/OTP with Observer
     basex                # XML database and XPath/XQuery processor
   ```
 
@@ -123,6 +123,59 @@ ln -siF dotfiles/.*(.) .
 ```
 
 ⚠️ The above will prompt you about replacing existing dotfiles in case there's something you'd rather keep. The `.git` directory (and any other directory) is ignored.
+
+## Installing Erlang
+
+There are some known issues with `wxWidgets` on Mojave that causes the rendering of tools like the `observer` to break. On MacOS the package is called `wxmac`, and unfortunately the default version in Homebrew is too old and doesn't contain the required flags to work properly.
+
+To work around this, as it was helpfully described in [this issue](https://github.com/asdf-vm/asdf-erlang/issues/95#issuecomment-593923921):
+
+1. Run:
+  ```zsh
+  brew edit wxmac
+  ```
+
+2. Apply the following patch:
+  ```diff
+  diff --git a/Formula/wxmac.rb b/Formula/wxmac.rb
+  index d80b02f9e..9c68e7363 100644
+  --- a/Formula/wxmac.rb
+  +++ b/Formula/wxmac.rb
+  @@ -1,8 +1,8 @@
+  class Wxmac < Formula
+    desc "Cross-platform C++ GUI toolkit (wxWidgets for macOS)"
+    homepage "https://www.wxwidgets.org"
+  -  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.5/wxWidgets-3.0.5.tar.bz2"
+  -  sha256 "8aacd56b462f42fb6e33b4d8f5d40be5abc3d3b41348ea968aa515cc8285d813"
+  +  url "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.3/wxWidgets-3.1.3.tar.bz2"
+  +  sha256 "fffc1d34dac54ff7008df327907984b156c50cff5a2f36ee3da6052744ab554a"
+    head "https://github.com/wxWidgets/wxWidgets.git"
+  
+    bottle do
+  @@ -19,6 +19,7 @@ class Wxmac < Formula
+    def install
+      args = [
+        "--prefix=#{prefix}",
+  +      "--enable-compat28",
+        "--enable-clipboard",
+        "--enable-controls",
+        "--enable-dataviewctrl",
+  ```
+
+3. Install `wxmac` and compile erlang:
+  ```zsh
+  brew install wxmac --build-from-source
+  asdf install erlang xx.x.x  # replace with actual version
+  ```
+
+4. Check that it worked:
+  ```zsh
+  # Don't forget to set the local/global version first :)
+  erl
+  1> observer:start().
+  ```
+
+5. Enjoy dark-mode Observer 😎
 
 ---
 <sup>1</sup> Requires license/subscription (but might also have a free plan)
