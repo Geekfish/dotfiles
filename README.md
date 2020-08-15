@@ -1,13 +1,12 @@
 # Dotfiles & New Laptop Setup
 
-Just my dotfiles and other setup resources.
-
 ## Table of Contents
 
 <!-- TOC -->
 
 - [Dotfiles & New Laptop Setup](#dotfiles--new-laptop-setup)
     - [Table of Contents](#table-of-contents)
+    - [About](#about)
     - [General](#general)
         - [Essentials](#essentials)
         - [Might be needed later](#might-be-needed-later)
@@ -18,6 +17,11 @@ Just my dotfiles and other setup resources.
     - [Dotfiles](#dotfiles)
 
 <!-- /TOC -->
+## About
+
+This is just my personal guide for keeping track of my configurations and facilitate setting up a new machine.
+
+The TOC in this document is built with the [Auto Markdown TOC](https://marketplace.visualstudio.com/items?itemName=huntertran.auto-markdown-toc) VS Code extension.
 
 ## General
 
