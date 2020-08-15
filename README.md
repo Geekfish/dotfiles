@@ -1,14 +1,29 @@
-# dotfiles
+# Dotfiles & New Laptop Setup
 
 Just my dotfiles and other setup resources.
 
-## New Laptop Setup
+## Table of Contents
+
+<!-- TOC -->
+
+- [Dotfiles & New Laptop Setup](#dotfiles--new-laptop-setup)
+    - [Table of Contents](#table-of-contents)
+    - [General](#general)
+        - [Essentials](#essentials)
+        - [Might be needed later](#might-be-needed-later)
+    - [Concentration](#concentration)
+    - [Development](#development)
+        - [Must-have](#must-have)
+        - [Optional](#optional)
+    - [Dotfiles](#dotfiles)
+
+<!-- /TOC -->
+
+## General
 
 Before installing the dotfiles it may be a good idea to install some of the things below.
 
-### General
-
-#### Essentials
+### Essentials
 
 - ⌨️ [iTerm2](https://www.iterm2.com/)
 - 🍺 [Brew](https://brew.sh/)
@@ -21,7 +36,7 @@ Before installing the dotfiles it may be a good idea to install some of the thin
 - 💬 [Slack](https://slack.com/intl/en-de/downloads/mac)
 - 📞 [Zoom](https://zoom.us/download)
 
-#### Might be needed later
+### Might be needed later
 
 Usually don't need to be install straight away.
 
@@ -39,15 +54,15 @@ Usually don't need to be install straight away.
 - 📸 [Skitch](https://evernote.com/products/skitch)
 - 🦈 [Surfshark](https://surfshark.com/)<sup>1</sup>
 
-### Concentration
+## Concentration
 
 - 🎯[Todoist](https://todoist.com/downloads/mac)<sup>1</sup>
 - 🍅 [Pomodone](https://pomodoneapp.com/download-pomodone-app.html)<sup>1</sup>
 - 🎧 [Spotify](https://www.spotify.com/de/download/mac/)<sup>1</sup>
 
-### Development
+## Development
 
-#### Must-have
+### Must-have
 
 - 💻 [Visual Studio Code](https://code.visualstudio.com/)
   <br>Use [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) pointing to the correct Gist.
@@ -80,7 +95,7 @@ Usually don't need to be install straight away.
     java                 # You *will* eventually need it...
   ```
 
-#### Optional
+### Optional
 
 Depending on current projects
 
@@ -95,7 +110,7 @@ Depending on current projects
     basex                # XML database and XPath/XQuery processor
   ```
 
-### Dotfiles
+## Dotfiles
 
 Assuming you checkout this repo in your `$HOME` directory, you can run the following to symlink all the dotfiles:
 
