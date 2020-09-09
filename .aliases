@@ -8,3 +8,4 @@ alias ll="ls -lha"
 #######
 alias git="hub"
 alias gitpurge="git remote prune origin && git branch --merged| egrep -v \"(^\*|master)\" | xargs git branch -d"
+alias gitrel="git log \$(git tag --sort=committerdate | tail -1)..HEAD --pretty=format:\"* %s\""
