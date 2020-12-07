@@ -74,6 +74,7 @@ Usually don't need to be install straight away.
 - 📯 [Postman](https://www.postman.com/downloads/)
 - 📑 [Dash](https://kapeli.com/dash)<sup>1</sup>
 - 🌐 [Chrome](https://www.google.com/chrome/)
+- 📝 [Awesome Vimrc](https://github.com/amix/vimrc)
 - With brew:
   ```zsh
   brew install \
