@@ -2,6 +2,7 @@
 # General #
 ###########
 alias ll="ls -lha"
+alias latest="ls -lhat | head"
 
 #######
 # Git #
