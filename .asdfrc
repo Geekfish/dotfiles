@@ -6,11 +6,8 @@
 # So we have to do this here manually
 
 # load ASDF, falling back to rbenv if not available
-if [ -f "$HOME/.asdf/asdf.sh" ]; then
-  . $HOME/.asdf/asdf.sh
-elif [ -f "/usr/local/opts/asdf/asdf.sh" ]; then
-  . "/usr/local/opts/asdf/asdf.sh"
-fi
+. /usr/local/opt/asdf/asdf.sh
 
 fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
+
