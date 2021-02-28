@@ -78,21 +78,20 @@ Usually don't need to be install straight away.
 - With brew:
   ```zsh
   brew install \
-    antigen              # light-weight alternative to oh-my-zsh
-    git                  # latest git version
-    hub                  # Github CLI
-    coreutils            # GNU core utils (required by asdf)
-    curl                 # curl :)
-    asdf                 # runtume version manager
-    the_silver_searcher  # faster `ack`
-    ripgrep              # even faster `ack`
-    diffmerge            # old-school 3-way merge
-    diff-so-fancy        # nicer-looking diffs
-    fzf                  # fuzzy finder
-    jq                   # `sed` for JSON
-    kube-ps1             # Kubernetes prompt
-    watch                # 👀
-  ```
+    antigen              `# light-weight alternative to oh-my-zsh` \
+    git                  `# latest git version` \
+    hub                  `# Github CLI` \
+    coreutils            `# GNU core utils (required by asdf)` \
+    curl                 `# curl :)` \
+    asdf                 `# runtume version manager` \
+    the_silver_searcher  `# faster 'ack'` \
+    ripgrep              `# even faster 'ack'` \
+    diffmerge            `# old-school 3-way merge` \
+    diff-so-fancy        `# nicer-looking diffs` \
+    fzf                  `# fuzzy finder` \
+    jq                   `# 'sed' for JSON` \
+    kube-ps1             `# Kubernetes prompt` \
+    watch                `# 👀`
 
 - Extra casks:
   ```zsh
@@ -111,9 +110,8 @@ Depending on current projects
 - With brew:
   ```zsh
   brew install \
-    kubernetes-cli       # Kubernetes utils
-    basex                # XML database and XPath/XQuery processor
-  ```
+    kubernetes-cli       `# Kubernetes utils` \
+    basex                `# XML database and XPath/XQuery processor`
 
 ## Dotfiles
 
