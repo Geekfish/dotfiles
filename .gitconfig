@@ -42,3 +42,6 @@
 	enabled = 1
 [pull]
 	ff = only
+[user]
+	email = contact@eleni.co
+	name = Eleni Lixourioti
