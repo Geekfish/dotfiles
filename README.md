@@ -82,6 +82,7 @@ Usually don't need to be install straight away.
     git                  `# latest git version` \
     hub                  `# Github CLI` \
     coreutils            `# GNU core utils (required by asdf)` \
+    gmp                  `# Sometimes needed by ruby` \
     curl                 `# curl :)` \
     asdf                 `# runtume version manager` \
     the_silver_searcher  `# faster 'ack'` \
