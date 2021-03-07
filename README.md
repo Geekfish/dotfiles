@@ -92,7 +92,9 @@ Usually don't need to be install straight away.
     fzf                  `# fuzzy finder` \
     jq                   `# 'sed' for JSON` \
     kube-ps1             `# Kubernetes prompt` \
-    watch                `# 👀`
+    watch                `# 👀` \
+    htop                 `# better 'top'` \
+    itermocil            `# iTerm-specific teamocil`
 
 - Extra casks:
   ```zsh
