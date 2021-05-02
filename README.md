@@ -75,7 +75,18 @@ Usually don't need to be install straight away.
 - 📑 [Dash](https://kapeli.com/dash)<sup>1</sup>
 - 🌐 [Chrome](https://www.google.com/chrome/)
 - 📝 [Awesome Vimrc](https://github.com/amix/vimrc)
-- With brew:
+
+#### With brew
+
+- Extra casks:
+  ```zsh
+  brew cask install \
+    blackhole            `# Virtual audio driver`  \
+    java                 `# You *will* eventually need it...` \
+    homebrew/cask-fonts  `# Nice fonts`
+  ```
+  
+- Packages:
   ```zsh
   brew install \
     antigen              `# light-weight alternative to oh-my-zsh` \
@@ -94,14 +105,9 @@ Usually don't need to be install straight away.
     kube-ps1             `# Kubernetes prompt` \
     watch                `# 👀` \
     htop                 `# better 'top'` \
-    itermocil            `# iTerm-specific teamocil`
+    itermocil            `# iTerm-specific teamocil` \
+    font-fira-code       `# Beautiful monospaced font with ligatures`
 
-- Extra casks:
-  ```zsh
-  brew cask install \
-    blackhole            # Virtual audio driver
-    java                 # You *will* eventually need it...
-  ```
 
 ### Optional
 
