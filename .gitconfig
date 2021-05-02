@@ -46,3 +46,5 @@
 [user]
 	email = contact@eleni.co
 	name = Eleni Lixourioti
+[init]
+	defaultBranch = main
