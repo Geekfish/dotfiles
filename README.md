@@ -185,5 +185,10 @@ To work around this, as it was helpfully described in [this issue](https://githu
 
 5. Enjoy dark-mode Observer 😎
 
+## Fonts
+
+`Fira Code` is a good monospace font for coding that supports [ligatures](https://www.wikiwand.com/en/Ligature_(writing)). I can be installed using `brew` (see above).
+Further config might be required depending on the editor, [see here for VSCode](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions).
+
 ---
 <sup>1</sup> Requires license/subscription (but might also have a free plan)
