@@ -13,9 +13,11 @@
     - [Concentration](#concentration)
     - [Development](#development)
         - [Must-have](#must-have)
+            - [With brew](#with-brew)
         - [Optional](#optional)
     - [Dotfiles](#dotfiles)
     - [Installing Erlang](#installing-erlang)
+    - [Fonts](#fonts)
 
 <!-- /TOC -->
 ## About
