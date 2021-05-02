@@ -187,7 +187,7 @@ To work around this, as it was helpfully described in [this issue](https://githu
 
 ## Fonts
 
-`Fira Code` is a good monospace font for coding that supports [ligatures](https://www.wikiwand.com/en/Ligature_(writing)). I can be installed using `brew` (see above).
+`Fira Code` is a good monospace font for coding that supports [ligatures](https://www.wikiwand.com/en/Ligature_(writing)). It can be installed using `brew` (see above).
 Further config might be required depending on the editor, [see here for VSCode](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions).
 
 ---
