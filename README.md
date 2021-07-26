@@ -117,11 +117,15 @@ Depending on current projects
 - 🐘 [Postgres.app](https://postgresapp.com/)
 - 🐍 [PyCharm](https://www.jetbrains.com/pycharm/)<sup>1</sup>
 - 🐳 [Docker](https://www.docker.com/products/docker-desktop)
+- 📜 [Poetry](https://python-poetry.org/docs/#osx--linux--bashonwindows-install-instructions)
 - With brew:
   ```zsh
   brew install \
     kubernetes-cli       `# Kubernetes utils` \
     basex                `# XML database and XPath/XQuery processor`
+    
+  brew tap heroku/brew && brew install heroku `# Heroku CLI`
+  ```
 
 ## Dotfiles
 
