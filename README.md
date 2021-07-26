@@ -137,6 +137,11 @@ ln -siF dotfiles/.*(.) .
 
 ⚠️ The above will prompt you about replacing existing dotfiles in case there's something you'd rather keep. The `.git` directory (and any other directory) is ignored.
 
+### Completions
+
+You can install optional completions by running `install_completions`.
+
+
 ## Installing Erlang
 
 There are some known issues with `wxWidgets` on Mojave that causes the rendering of tools like the `observer` to break. On MacOS the package is called `wxmac`, and unfortunately the default version in Homebrew is too old and doesn't contain the required flags to work properly.
