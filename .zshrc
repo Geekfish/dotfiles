@@ -1,3 +1,4 @@
+. $HOME/.completions
 . $HOME/.antigenrc
 . $HOME/.aliases
 . $HOME/.env
