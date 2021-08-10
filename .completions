@@ -20,3 +20,6 @@ compinit
 # Checkout brew completion instructions here for alternatives:
 # https://docs.brew.sh/Shell-Completion
 
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/workspace/tools/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/workspace/tools/google-cloud-sdk/completion.zsh.inc"; fi
+
