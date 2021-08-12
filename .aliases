@@ -3,6 +3,7 @@
 ###########
 alias ll="ls -lha"
 alias latest="ls -lhat | head"
+alias vim="nvim"
 
 #######
 # Git #

@@ -107,7 +107,8 @@ Usually don't need to be install straight away.
     watch                `# 👀` \
     htop                 `# better 'top'` \
     itermocil            `# iTerm-specific teamocil` \
-    font-fira-code       `# Beautiful monospaced font with ligatures`
+    font-fira-code       `# Beautiful monospaced font with ligatures` \
+    neovim               `# smaller, improved version of vim`
 
 
 ### Optional
