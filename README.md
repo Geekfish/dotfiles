@@ -134,7 +134,8 @@ Depending on current projects
 Assuming you checkout this repo in your `$HOME` directory, you can run the following to symlink all the dotfiles:
 
 ```zsh
-ln -siF dotfiles/.*(.) .
+cd dotfiles
+./install_config.sh
 ```
 
 ⚠️ The above will prompt you about replacing existing dotfiles in case there's something you'd rather keep. The `.git` directory (and any other directory) is ignored.
