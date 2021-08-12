@@ -108,7 +108,8 @@ Usually don't need to be install straight away.
     htop                 `# better 'top'` \
     itermocil            `# iTerm-specific teamocil` \
     font-fira-code       `# Beautiful monospaced font with ligatures` \
-    neovim               `# smaller, improved version of vim`
+    neovim               `# smaller, improved version of vim` \
+    tree                 `# display directory trees`
 
 
 ### Optional
