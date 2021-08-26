@@ -11,5 +11,21 @@ alias hidden_on='defaults write com.apple.Finder AppleShowAllFiles YES'
 # Git #
 #######
 alias git="hub"
-alias gitpurge="git remote prune origin && git branch --merged| egrep -v \"(^\*|master)\" | xargs git branch -d"
-alias gitrel="git log \$(git tag --sort=committerdate | tail -1)..HEAD --pretty=format:\"* %s\""
+alias git_rel="git log \$(git tag --sort=committerdate | tail -1)..HEAD --pretty=format:\"* %s\""
+alias git_parent='git show-branch | sed "s/].*//" | grep "\*" | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -n1 | sed "s/^.*\[//"'
+
+git_purge_local () {
+    readonly main_branch=${1:?"Please specify your 'trunk' branch, ex. main or master."}
+    readonly branches=${$(git branch --merged | egrep -v "(^\*|$main_branch)"):?"No branches found – aborting."}
+    echo "The following LOCAL branches seem to be merged and will be purged:"'\n'
+    echo "$branches"'\n'
+    if read -q "choice? Press Y/y to continue"$'\n'; then
+        echo '\n'
+        echo "$branches" | xargs git branch -d
+    else
+        echo '\n'"Aborted!"
+    fi
+}
+git_todos () {
+   git diff "${1:-main}" HEAD | grep "^+.*TODO"
+}
