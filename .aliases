@@ -4,6 +4,8 @@
 alias ll="ls -lha"
 alias latest="ls -lhat | head"
 alias vim="nvim"
+alias hidden_off='defaults write com.apple.Finder AppleShowAllFiles NO'
+alias hidden_on='defaults write com.apple.Finder AppleShowAllFiles YES'
 
 #######
 # Git #
