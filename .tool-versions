@@ -1,6 +1,6 @@
-erlang 23.0.3
-elixir 1.10.4
+erlang 24.0.5
+elixir 1.12.2-otp-24
 nodejs 12.9.1
-python 3.9.2
+python 3.9.6
 ruby 3.0.1
 pre-commit 2.14.0
