@@ -87,6 +87,12 @@ Usually don't need to be install straight away.
     homebrew/cask-fonts  `# Nice fonts`
   ```
   
+- Extra taps:
+  ```zsh
+  brew tap \
+    shopify/shopify
+  ```
+  
 - Packages:
   ```zsh
   brew install \
@@ -109,7 +115,8 @@ Usually don't need to be install straight away.
     itermocil            `# iTerm-specific teamocil` \
     font-fira-code       `# Beautiful monospaced font with ligatures` \
     neovim               `# smaller, improved version of vim` \
-    tree                 `# display directory trees`
+    tree                 `# display directory trees` \
+    shopify              `# shopify CLI`
 
 
 ### Optional
