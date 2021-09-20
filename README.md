@@ -36,9 +36,10 @@ Before installing the dotfiles it may be a good idea to install some of the thin
 - 🍺 [Brew](https://brew.sh/)
 - 🦊 [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 - 🔑 [LastPass](https://lastpass.com/misc_download2.php)<sup>1</sup>
-- ✉️ [Mailplane](https://mailplaneapp.com/)<sup>1</sup>
+- ✉️ [Boxysuite](https://www.boxysuite.com/)<sup>1</sup>
 - 🦠 [ClamXAV](https://www.clamxav.com/)<sup>1</sup>
 - 📦 [Dropbox](https://www.dropbox.com/)
+- 🗃 [Google Drive](https://www.google.com/drive/download/)
 - 📝 [Notion](https://www.notion.so/desktop)<sup>1</sup>
 - 💬 [Slack](https://slack.com/intl/en-de/downloads/mac)
 - 📞 [Zoom](https://zoom.us/download)
@@ -49,7 +50,6 @@ Usually don't need to be install straight away.
 
 - 🧲 [Magnet](https://magnet.crowdcafe.com/)<sup>1</sup>
 - 🎩 [Alfred](https://www.alfredapp.com/)<sup>1</sup>
-- 📦 [Google Drive](https://www.google.com/drive/download/)
 - 👓 [Adobe Reader](https://get.adobe.com/uk/reader/)
 - 📽 [Deckset](https://www.deckset.com/)<sup>1</sup>
 - 📱 [Franz](https://meetfranz.com/)
