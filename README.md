@@ -148,8 +148,11 @@ cd dotfiles
 
 ### Completions
 
-You can install optional completions by running `install_completions`.
+You can install optional completions by running:
 
+```zsh
+./install_completions.sh
+```
 
 ## Installing Erlang
 
