@@ -71,7 +71,7 @@ Usually don't need to be install straight away.
 ### Must-have
 
 - 💻 [Visual Studio Code](https://code.visualstudio.com/)
-  <br>Use [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) pointing to the correct Gist.
+  Don't forget to sync settings!
 - 📯 [Postman](https://www.postman.com/downloads/)
 - 📑 [Dash](https://kapeli.com/dash)<sup>1</sup>
 - 🌐 [Chrome](https://www.google.com/chrome/)
