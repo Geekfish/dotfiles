@@ -82,14 +82,14 @@ Usually don't need to be install straight away.
 - Extra casks:
   ```zsh
   brew install --cask \
-    java                 `# You *will* eventually need it...` \
-    homebrew/cask-fonts  `# Nice fonts`
+    java                 `# You *will* eventually need it...`
   ```
   
 - Extra taps:
   ```zsh
   brew tap \
-    shopify/shopify
+    homebrew/cask-fonts   `# nice fonts` \
+    shopify/shopify       `# shopify CLO`
   ```
   
 - Packages:
