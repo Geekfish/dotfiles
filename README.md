@@ -81,7 +81,7 @@ Usually don't need to be install straight away.
 
 - Extra casks:
   ```zsh
-  brew cask install \
+  brew install --cask \
     blackhole            `# Virtual audio driver`  \
     java                 `# You *will* eventually need it...` \
     homebrew/cask-fonts  `# Nice fonts`
