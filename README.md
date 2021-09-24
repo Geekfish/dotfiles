@@ -82,7 +82,6 @@ Usually don't need to be install straight away.
 - Extra casks:
   ```zsh
   brew install --cask \
-    blackhole            `# Virtual audio driver`  \
     java                 `# You *will* eventually need it...` \
     homebrew/cask-fonts  `# Nice fonts`
   ```
@@ -116,7 +115,8 @@ Usually don't need to be install straight away.
     font-fira-code       `# Beautiful monospaced font with ligatures` \
     neovim               `# smaller, improved version of vim` \
     tree                 `# display directory trees` \
-    shopify              `# shopify CLI`
+    shopify              `# shopify CLI` \
+    blackhole-2ch        `# Virtual audio driver`
 
 
 ### Optional
