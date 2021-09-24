@@ -88,8 +88,7 @@ Usually don't need to be install straight away.
 - Extra taps:
   ```zsh
   brew tap \
-    homebrew/cask-fonts   `# nice fonts` \
-    shopify/shopify       `# shopify CLO`
+    homebrew/cask-fonts   `# nice fonts`
   ```
   
 - Packages:
@@ -130,10 +129,9 @@ Depending on current projects
     kubernetes-cli             `# Kubernetes utils` \
     basex                      `# XML database and XPath/XQuery processor` \
     TomAnthony/brews/itermocil `# iTerm-specific teamocil` \
-    gmp                        `# Sometimes needed by ruby` \
-    shopify                    `# shopify CLI`
+    gmp                        `# Sometimes needed by ruby`
 
-    
+  brew tap shopify/shopify && brew install shopify `# shopify CLI`  
   brew tap heroku/brew && brew install heroku `# Heroku CLI`
   ```
 
