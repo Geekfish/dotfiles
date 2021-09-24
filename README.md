@@ -99,7 +99,6 @@ Usually don't need to be install straight away.
     git                  `# latest git version` \
     hub                  `# Github CLI` \
     coreutils            `# GNU core utils (required by asdf)` \
-    gmp                  `# Sometimes needed by ruby` \
     curl                 `# curl :)` \
     asdf                 `# runtume version manager` \
     the_silver_searcher  `# faster 'ack'` \
@@ -111,11 +110,9 @@ Usually don't need to be install straight away.
     kube-ps1             `# Kubernetes prompt` \
     watch                `# 👀` \
     htop                 `# better 'top'` \
-    itermocil            `# iTerm-specific teamocil` \
     font-fira-code       `# Beautiful monospaced font with ligatures` \
     neovim               `# smaller, improved version of vim` \
     tree                 `# display directory trees` \
-    shopify              `# shopify CLI` \
     blackhole-2ch        `# Virtual audio driver`
 
 
@@ -130,8 +127,12 @@ Depending on current projects
 - With brew:
   ```zsh
   brew install \
-    kubernetes-cli       `# Kubernetes utils` \
-    basex                `# XML database and XPath/XQuery processor`
+    kubernetes-cli             `# Kubernetes utils` \
+    basex                      `# XML database and XPath/XQuery processor` \
+    TomAnthony/brews/itermocil `# iTerm-specific teamocil` \
+    gmp                        `# Sometimes needed by ruby` \
+    shopify                    `# shopify CLI`
+
     
   brew tap heroku/brew && brew install heroku `# Heroku CLI`
   ```
