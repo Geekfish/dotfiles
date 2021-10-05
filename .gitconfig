@@ -1,0 +1,6 @@
+[include]
+  path = ~/.gitconfig_shared
+[include]
+  path = ~/.gitconfig_personal
+[includeIf "gitdir:~/workspace/work/"]
+  path = ~/.gitconfig_work
