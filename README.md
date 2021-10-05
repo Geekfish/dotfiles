@@ -16,6 +16,7 @@
             - [With brew](#with-brew)
         - [Optional](#optional)
     - [Dotfiles](#dotfiles)
+        - [Completions](#completions)
     - [Fonts](#fonts)
 
 <!-- /TOC -->
@@ -112,7 +113,8 @@ Usually don't need to be install straight away.
     neovim               `# smaller, improved version of vim` \
     tree                 `# display directory trees` \
     blackhole-2ch        `# Virtual audio driver` \
-    autoconf wxmac gnupg `# For Erlang https://github.com/asdf-vm/asdf-erlang#osx`
+    autoconf wxmac gnupg `# For Erlang https://github.com/asdf-vm/asdf-erlang#osx` \
+    gpg gpg2 pinentry-mac`# GPG utilities`
 
 
 ### Optional
@@ -153,6 +155,20 @@ You can install optional completions by running:
 ```zsh
 ./install_completions.sh
 ```
+
+### GPG
+
+To store GPG passphrases in the keychain, you need to run:
+
+```zsh
+mkdir -p -m 0700 ~/.gnupg
+echo 'pinentry-program /usr/local/bin/pinentry-mac' | tee ~/.gnupg/gpg-agent.conf
+pkill -TERM gpg-agent
+```
+
+and restart the terminal session.
+
+Next time you're asked for the passphrase, it will be stored in the keychain.
 
 ## Fonts
 
