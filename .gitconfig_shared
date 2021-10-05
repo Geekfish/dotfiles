@@ -1,0 +1,51 @@
+[alias]
+	# Force push but don't overwrite if the remote has been updated
+	pushf = push --force-with-lease
+	# --
+	# Don't show json files in the diff
+	show-no-json = diff HEAD~1 -- . ':(exclude)*.json'
+	# --
+	# Stash unstaged changes only
+	stashu = stash -k -u
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
+	editor = vim
+[merge]
+	tool = diffmerge
+[mergetool "vscode"]
+	cmd = "code --wait $MERGED"
+[diff]
+	tool = diffmerge
+[difftool "vscode"]
+	cmd = "code --wait --diff $LOCAL $REMOTE"
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	trustExitCode = true
+[mergetool]
+	keepBackup = false
+[color]
+	ui = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green
+	newHighlight = green 22
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green
+	whitespace = red reverse
+[rerere]
+	enabled = 1
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
