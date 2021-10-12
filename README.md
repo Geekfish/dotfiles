@@ -49,11 +49,8 @@ Before installing the dotfiles it may be a good idea to install some of the thin
 Usually don't need to be install straight away.
 
 - 🧲 [Magnet](https://magnet.crowdcafe.com/)<sup>1</sup>
-- 🎩 [Alfred](https://www.alfredapp.com/)<sup>1</sup>
-- 👓 [Adobe Reader](https://get.adobe.com/uk/reader/)
 - 📽 [Deckset](https://www.deckset.com/)<sup>1</sup>
 - 📱 [Franz](https://meetfranz.com/)
-- ⏺ [Gifox](https://gifox.io/) (v1)<sup>1</sup>
 - 🗝 [Keybase](https://keybase.io/docs/the_app/install_macos)
 - 💼 [Office 365](https://www.office.com/)<sup>1</sup>
 - ☊ [Mindnode](https://mindnode.com/)<sup>1</sup>
@@ -73,7 +70,6 @@ Usually don't need to be install straight away.
 - 💻 [Visual Studio Code](https://code.visualstudio.com/)
   Don't forget to sync settings!
 - 📯 [Postman](https://www.postman.com/downloads/)
-- 📑 [Dash](https://kapeli.com/dash)<sup>1</sup>
 - 🌐 [Chrome](https://www.google.com/chrome/)
 - 📝 [Awesome Vimrc](https://github.com/amix/vimrc)
 
