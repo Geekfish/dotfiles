@@ -6,3 +6,6 @@
 . $HOME/.asdfrc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Optional private configuration, not in git
+[ -f ~/.privaterc ] && source ~/.privaterc
