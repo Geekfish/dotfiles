@@ -80,13 +80,13 @@ Usually don't need to be install straight away.
   brew install --cask \
     java                 `# You *will* eventually need it...`
   ```
-  
+
 - Extra taps:
   ```zsh
   brew tap \
     homebrew/cask-fonts   `# nice fonts`
   ```
-  
+
 - Packages:
   ```zsh
   brew install \
@@ -110,7 +110,8 @@ Usually don't need to be install straight away.
     tree                 `# display directory trees` \
     blackhole-2ch        `# Virtual audio driver` \
     autoconf wxmac gnupg `# For Erlang https://github.com/asdf-vm/asdf-erlang#osx` \
-    gpg gpg2 pinentry-mac`# GPG utilities`
+    gpg gpg2 pinentry-mac`# GPG utilities` \
+    --cask raycast       `# Spotlight-like omni-helper`
 
 
 ### Optional
