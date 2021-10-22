@@ -54,7 +54,6 @@ Usually don't need to be install straight away.
 - 🗝 [Keybase](https://keybase.io/docs/the_app/install_macos)
 - 💼 [Office 365](https://www.office.com/)<sup>1</sup>
 - ☊ [Mindnode](https://mindnode.com/)<sup>1</sup>
-- 📸 [Skitch](https://evernote.com/products/skitch)
 - 🦈 [Surfshark](https://surfshark.com/)<sup>1</sup>
 
 ## Concentration
@@ -111,7 +110,8 @@ Usually don't need to be install straight away.
     blackhole-2ch        `# Virtual audio driver` \
     autoconf wxmac gnupg `# For Erlang https://github.com/asdf-vm/asdf-erlang#osx` \
     gpg gpg2 pinentry-mac`# GPG utilities` \
-    --cask raycast       `# Spotlight-like omni-helper`
+    --cask raycast       `# Spotlight-like omni-helper` \
+    --cask flameshot     `# annotated screeshots`
 
 
 ### Optional
