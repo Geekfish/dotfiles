@@ -48,6 +48,7 @@ Before installing the dotfiles it may be a good idea to install some of the thin
 
 Usually don't need to be install straight away.
 
+- 🥞 [TablePlus](https://tableplus.com/)
 - 🧲 [Magnet](https://magnet.crowdcafe.com/)<sup>1</sup>
 - 📽 [Deckset](https://www.deckset.com/)<sup>1</sup>
 - 📱 [Franz](https://meetfranz.com/)
