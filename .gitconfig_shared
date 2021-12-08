@@ -12,6 +12,8 @@
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	editor = vim
+[fetch]
+    prune = true
 [merge]
 	tool = diffmerge
 [mergetool "vscode"]
