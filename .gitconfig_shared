@@ -9,6 +9,9 @@
 	stashu = stash -k -u
 	main-sync = "!f() { git pull --rebase --autostash origin ${1:-master};}; f"
 	delete-merged = "!f() { local targetBranch=${1:-master} && git checkout -q $targetBranch && git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d && git for-each-ref refs/heads/ \"--format=%(refname:short)\" | while read branch; do mergeBase=$(git merge-base $targetBranch $branch) && [[ $(git cherry $targetBranch $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == \"-\"* ]] && git branch -D $branch; done; }; f"
+	# --
+	# Switch back to the previous branch
+	back = switch -
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	editor = vim
