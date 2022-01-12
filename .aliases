@@ -26,6 +26,3 @@ git_purge_local () {
         echo '\n'"Aborted!"
     fi
 }
-git_todos () {
-   git diff "${1:-main}" HEAD | grep "^+.*TODO"
-}

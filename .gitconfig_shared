@@ -16,6 +16,9 @@
 	# --
 	# Switch back to the previous branch
 	back = switch -
+	# --
+	# Finds outstanding "TODOs" introduced in this branch (vs main or specified branch)
+	todos = "!f() { git diff \"${1:-main}\" HEAD | grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox} \"^+.*TODO\";}; f"
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	editor = vim
