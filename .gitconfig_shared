@@ -17,6 +17,9 @@
 	# Switch back to the previous branch
 	back = switch -
 	# --
+	# Run elixir formatter before staging files
+	addex = "!f() { mix format && git add -p;}; f"
+	# --
 	# Finds outstanding "TODOs" introduced in this branch (vs main or specified branch)
 	todos = "!f() { git diff \"${1:-main}\" HEAD | grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox} \"^+.*TODO\";}; f"
 [core]
