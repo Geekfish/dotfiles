@@ -26,3 +26,9 @@ git_purge_local () {
         echo '\n'"Aborted!"
     fi
 }
+
+##########
+# Elixir #
+##########
+# Require an elixir project with Phoenix
+alias search_routes="mix phx.routes | fzf"
