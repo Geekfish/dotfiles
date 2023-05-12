@@ -15,6 +15,7 @@
         - [Must-have](#must-have)
             - [With brew](#with-brew)
         - [Optional](#optional)
+    - [Nix - Experimental](#nix---experimental)
     - [Dotfiles](#dotfiles)
         - [Completions](#completions)
     - [Fonts](#fonts)
