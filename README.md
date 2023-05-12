@@ -83,7 +83,7 @@ Usually don't need to be install straight away.
   brew install \
     zinit                `# zsh plugin manager` \
     git                  `# latest git version` \
-    hub                  `# Github CLI` \
+    gh                   `# Github CLI` \
     coreutils            `# GNU core utils (required by asdf)` \
     curl                 `# curl :)` \
     asdf                 `# runtume version manager` \
