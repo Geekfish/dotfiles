@@ -98,8 +98,7 @@ Usually don't need to be install straight away.
     gpg gpg2 pinentry-mac`# GPG utilities` \
     exercism             `# Exercism.org` \
     --cask raycast       `# Spotlight-like omni-helper` \
-    --cask flameshot     `# annotated screeshots` \
-    --cask java          `# You *will* eventually need it...`
+    --cask flameshot     `# annotated screeshots`
 
 
 ### Optional
