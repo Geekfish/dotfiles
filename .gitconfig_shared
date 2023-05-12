@@ -27,19 +27,14 @@
 	editor = vim
 [fetch]
     prune = true
-[merge]
-	tool = diffmerge
-[mergetool "vscode"]
-	cmd = "code --wait $MERGED"
 [diff]
-	tool = diffmerge
+  tool = vscode
 [difftool "vscode"]
-	cmd = "code --wait --diff $LOCAL $REMOTE"
-[difftool "diffmerge"]
-	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
-[mergetool "diffmerge"]
-	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
-	trustExitCode = true
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = vscode
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
 [mergetool]
 	keepBackup = false
 [color]
@@ -56,6 +51,8 @@
 	old = red bold
 	new = green
 	whitespace = red reverse
+[interactive]
+	diffFilter = "diff-so-fancy --patch"
 [rerere]
 	enabled = 1
 [pull]

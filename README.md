@@ -88,7 +88,6 @@ Usually don't need to be install straight away.
     curl                 `# curl :)` \
     asdf                 `# runtume version manager` \
     ripgrep              `# even faster 'ack'` \
-    diffmerge            `# old-school 3-way merge` \
     diff-so-fancy        `# nicer-looking diffs` \
     fzf                  `# fuzzy finder` \
     jq                   `# 'sed' for JSON` \
