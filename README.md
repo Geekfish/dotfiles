@@ -18,6 +18,7 @@
     - [Nix - Experimental](#nix---experimental)
     - [Dotfiles](#dotfiles)
         - [Completions](#completions)
+        - [GPG](#gpg)
     - [Fonts](#fonts)
 
 <!-- /TOC -->
@@ -157,17 +158,29 @@ You can install optional completions by running:
 
 ### GPG
 
-To store GPG passphrases in the keychain, you need to run:
+1. To store GPG passphrases in the keychain, you need to run:
 
 ```zsh
 mkdir -p -m 0700 ~/.gnupg
-echo 'pinentry-program /usr/local/bin/pinentry-mac' | tee ~/.gnupg/gpg-agent.conf
+echo "pinentry-program $(which pinentry-mac)" | tee ~/.gnupg/gpg-agent.conf
 pkill -TERM gpg-agent
 ```
 
 and restart the terminal session.
 
 Next time you're asked for the passphrase, it will be stored in the keychain.
+
+2. Make sure you import a valid GPG key, see also [GPG, Github and Keybase guide](https://github.com/pstadler/keybase-gpg-github).
+
+3. Ensure the key and author details are actually used, by setting up `.gitconfig_personal` (not shared here)
+
+```
+[user]
+  name = "..."
+  email = "..."
+  signingkey = "..."
+
+```
 
 ## Fonts
 
