@@ -35,32 +35,25 @@ Before installing the dotfiles it may be a good idea to install some of the thin
 - ⌨️ [iTerm2](https://www.iterm2.com/)
 - 🍺 [Brew](https://brew.sh/)
 - 🦊 [Firefox](https://www.mozilla.org/en-US/firefox/new/)
-- 🔑 [LastPass](https://lastpass.com/misc_download2.php)<sup>1</sup>
-- ✉️ [Boxysuite](https://www.boxysuite.com/)<sup>1</sup>
-- 🦠 [ClamXAV](https://www.clamxav.com/)<sup>1</sup>
-- 📦 [Dropbox](https://www.dropbox.com/)
+- 🔑 [1password](https://1password.com/)<sup>1</sup>
 - 🗃 [Google Drive](https://www.google.com/drive/download/)
-- 📝 [Notion](https://www.notion.so/desktop)<sup>1</sup>
-- 💬 [Slack](https://slack.com/intl/en-de/downloads/mac)
-- 📞 [Zoom](https://zoom.us/download)
+- 📝 [Obsidian](https://obsidian.md/)<sup>1</sup>
+- 👀 [Raycast](https://www.raycast.com/)
 
 ### Might be needed later
 
 Usually don't need to be install straight away.
 
 - 🥞 [TablePlus](https://tableplus.com/)
+- 🔥 [Flameshot](https://flameshot.org/)
 - 🧲 [Magnet](https://magnet.crowdcafe.com/)<sup>1</sup>
 - 📽 [Deckset](https://www.deckset.com/)<sup>1</sup>
-- 📱 [Franz](https://meetfranz.com/)
 - 🗝 [Keybase](https://keybase.io/docs/the_app/install_macos)
 - 💼 [Office 365](https://www.office.com/)<sup>1</sup>
 - ☊ [Mindnode](https://mindnode.com/)<sup>1</sup>
-- 🦈 [Surfshark](https://surfshark.com/)<sup>1</sup>
 
 ## Concentration
 
-- 🎯[Todoist](https://todoist.com/downloads/mac)<sup>1</sup>
-- 🍅 [Pomodone](https://pomodoneapp.com/download-pomodone-app.html)<sup>1</sup>
 - 🎧 [Spotify](https://www.spotify.com/de/download/mac/)<sup>1</sup>
 
 ## Development
