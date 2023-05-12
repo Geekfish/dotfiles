@@ -68,12 +68,6 @@ Usually don't need to be install straight away.
 
 #### With brew
 
-- Extra casks:
-  ```zsh
-  brew install --cask \
-    java                 `# You *will* eventually need it...`
-  ```
-
 - Extra taps:
   ```zsh
   brew tap \
@@ -100,10 +94,12 @@ Usually don't need to be install straight away.
     neovim               `# smaller, improved version of vim` \
     tree                 `# display directory trees` \
     blackhole-2ch        `# Virtual audio driver` \
-    autoconf wxmac gnupg `# For Erlang https://github.com/asdf-vm/asdf-erlang#osx` \
+    autoconf gnupg       `# For Erlang https://github.com/asdf-vm/asdf-erlang#osx` \
     gpg gpg2 pinentry-mac`# GPG utilities` \
+    exercism             `# Exercism.org` \
     --cask raycast       `# Spotlight-like omni-helper` \
-    --cask flameshot     `# annotated screeshots`
+    --cask flameshot     `# annotated screeshots` \
+    --cask java          `# You *will* eventually need it...`
 
 
 ### Optional
