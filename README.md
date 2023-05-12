@@ -128,6 +128,17 @@ Depending on current projects
   brew tap heroku/brew && brew install heroku `# Heroku CLI`
   ```
 
+## Nix - Experimental
+
+To install:
+
+```zsh
+<(curl -L https://nixos.org/nix/install)
+
+nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
+./result/bin/darwin-installer
+```
+
 ## Dotfiles
 
 Assuming you checkout this repo in your `$HOME` directory, you can run the following to symlink all the dotfiles:
