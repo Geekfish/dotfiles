@@ -1,11 +1,12 @@
 . $HOME/.completions
-. $HOME/.antigenrc
+. $HOME/.ziminit
 . $HOME/.aliases
 . $HOME/.env
 . $HOME/.pathrc
-. $HOME/.asdfrc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Optional private configuration, not in git
 [ -f ~/.privaterc ] && source ~/.privaterc
+
+echo "👋 'ello!"

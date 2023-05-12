@@ -11,8 +11,6 @@ if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 fi
 
-autoload -Uz compinit
-compinit
 # This must be done before compinit is called.
 # Note that if you are using Oh My Zsh, it will call compinit for you,
 # so this must be done before you call oh-my-zsh.sh.
@@ -22,4 +20,3 @@ compinit
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/workspace/tools/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/workspace/tools/google-cloud-sdk/completion.zsh.inc"; fi
-
