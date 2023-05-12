@@ -10,7 +10,6 @@ alias hidden_on='defaults write com.apple.Finder AppleShowAllFiles YES'
 #######
 # Git #
 #######
-alias git="hub"
 alias git_rel="git log \$(git tag --sort=committerdate | tail -1)..HEAD --pretty=format:\"* %s\""
 alias git_parent='git show-branch | sed "s/].*//" | grep "\*" | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -n1 | sed "s/^.*\[//"'
 
