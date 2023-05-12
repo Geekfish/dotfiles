@@ -38,14 +38,12 @@ Before installing the dotfiles it may be a good idea to install some of the thin
 - 🔑 [1password](https://1password.com/)<sup>1</sup>
 - 🗃 [Google Drive](https://www.google.com/drive/download/)
 - 📝 [Obsidian](https://obsidian.md/)<sup>1</sup>
-- 👀 [Raycast](https://www.raycast.com/)
 
 ### Might be needed later
 
 Usually don't need to be install straight away.
 
 - 🥞 [TablePlus](https://tableplus.com/)
-- 🔥 [Flameshot](https://flameshot.org/)
 - 🧲 [Magnet](https://magnet.crowdcafe.com/)<sup>1</sup>
 - 📽 [Deckset](https://www.deckset.com/)<sup>1</sup>
 - 🗝 [Keybase](https://keybase.io/docs/the_app/install_macos)
@@ -83,7 +81,7 @@ Usually don't need to be install straight away.
 - Packages:
   ```zsh
   brew install \
-    antigen              `# light-weight alternative to oh-my-zsh` \
+    zinit                `# zsh plugin manager` \
     git                  `# latest git version` \
     hub                  `# Github CLI` \
     coreutils            `# GNU core utils (required by asdf)` \
