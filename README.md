@@ -87,7 +87,6 @@ Usually don't need to be install straight away.
     coreutils            `# GNU core utils (required by asdf)` \
     curl                 `# curl :)` \
     asdf                 `# runtume version manager` \
-    the_silver_searcher  `# faster 'ack'` \
     ripgrep              `# even faster 'ack'` \
     diffmerge            `# old-school 3-way merge` \
     diff-so-fancy        `# nicer-looking diffs` \
