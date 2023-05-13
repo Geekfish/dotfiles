@@ -46,6 +46,7 @@ Before installing the dotfiles it may be a good idea to install some of the thin
 Usually don't need to be install straight away.
 
 - 🥞 [TablePlus](https://tableplus.com/)
+- 💬 [Signal](https://signal.org/)
 - 🧲 [Magnet](https://magnet.crowdcafe.com/)<sup>1</sup>
 - 📽 [Deckset](https://www.deckset.com/)<sup>1</sup>
 - 🗝 [Keybase](https://keybase.io/docs/the_app/install_macos)
