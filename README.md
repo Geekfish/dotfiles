@@ -50,10 +50,10 @@ Usually don't need to be install straight away.
 - 📽 [Deckset](https://www.deckset.com/)<sup>1</sup>
 - 🗝 [Keybase](https://keybase.io/docs/the_app/install_macos)
 - 💼 [Office 365](https://www.office.com/)<sup>1</sup>
-- ☊ [Mindnode](https://mindnode.com/)<sup>1</sup>
 
 ## Concentration
 
+- ☊ [Mindnode](https://mindnode.com/)<sup>1</sup>
 - 🎧 [Spotify](https://www.spotify.com/de/download/mac/)<sup>1</sup>
 
 ## Development
