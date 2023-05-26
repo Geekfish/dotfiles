@@ -16,8 +16,11 @@
 	# --
 	# Switch back to the previous branch
 	back = switch -
-	# --
-	# Run elixir formatter before staging files
+    # --
+    # Create a fixup commit on top of the latest commit
+    fixup = commit --fixup HEAD
+    # --
+    # Run elixir formatter before staging files
 	addex = "!f() { mix format && git add -p;}; f"
 	# --
 	# Finds outstanding "TODOs" introduced in this branch (vs main or specified branch)
