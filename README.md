@@ -80,9 +80,9 @@ Usually don't need to be install straight away.
     zinit                `# zsh plugin manager` \
     git                  `# latest git version` \
     gh                   `# Github CLI` \
-    coreutils            `# GNU core utils (required by asdf)` \
+    coreutils            `# GNU core utils` \
     curl                 `# curl :)` \
-    asdf                 `# runtume version manager` \
+    jdx/tap/rtx          `# runtume version manager` \
     ripgrep              `# even faster 'ack'` \
     diff-so-fancy        `# nicer-looking diffs` \
     fzf                  `# fuzzy finder` \
