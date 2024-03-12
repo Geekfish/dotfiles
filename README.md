@@ -39,7 +39,7 @@ Before installing the dotfiles it may be a good idea to install some of the thin
 - 🦊 [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 - 🔑 [1password](https://1password.com/)<sup>1</sup>
 - 🗃 [Google Drive](https://www.google.com/drive/download/)
-- 📝 [Obsidian](https://obsidian.md/)<sup>1</sup>
+- 📝 [Obsidian](https://obsidian.md/)
 
 ### Might be needed later
 
@@ -66,63 +66,6 @@ Usually don't need to be install straight away.
 - 🌐 [Chrome](https://www.google.com/chrome/)
 - 📝 [Awesome Vimrc](https://github.com/amix/vimrc)
 
-#### With brew
-
-- Extra taps:
-  ```zsh
-  brew tap \
-    homebrew/cask-fonts   `# nice fonts`
-  ```
-
-- Packages:
-  ```zsh
-  brew install \
-    zinit                `# zsh plugin manager` \
-    git                  `# latest git version` \
-    gh                   `# Github CLI` \
-    coreutils            `# GNU core utils` \
-    curl                 `# curl :)` \
-    mise                 `# runtume version manager` \
-    icu4c                `# Unicode lib for compiling postgres` \
-    pkg-config           `# Manage link flags for compilation` \
-    ripgrep              `# even faster 'ack'` \
-    diff-so-fancy        `# nicer-looking diffs` \
-    fzf                  `# fuzzy finder` \
-    jq                   `# 'sed' for JSON` \
-    kube-ps1             `# Kubernetes prompt` \
-    watch                `# 👀` \
-    htop                 `# better 'top'` \
-    font-fira-code       `# Beautiful monospaced font with ligatures` \
-    neovim               `# smaller, improved version of vim` \
-    tree                 `# display directory trees` \
-    blackhole-2ch        `# Virtual audio driver` \
-    autoconf gnupg       `# For Erlang https://github.com/asdf-vm/asdf-erlang#osx` \
-    gpg gpg2 pinentry-mac`# GPG utilities` \
-    exercism             `# Exercism.org` \
-    --cask raycast       `# Spotlight-like omni-helper` \
-    --cask flameshot     `# annotated screeshots`
-
-
-### Optional
-
-Depending on current projects
-
-- 🐘 [Postgres.app](https://postgresapp.com/)
-- 🐍 [PyCharm](https://www.jetbrains.com/pycharm/)<sup>1</sup>
-- 🐳 [Docker](https://www.docker.com/products/docker-desktop)
-- 📜 [Poetry](https://python-poetry.org/docs/#osx--linux--bashonwindows-install-instructions)
-- With brew:
-  ```zsh
-  brew install \
-    kubernetes-cli             `# Kubernetes utils` \
-    basex                      `# XML database and XPath/XQuery processor` \
-    TomAnthony/brews/itermocil `# iTerm-specific teamocil` \
-    gmp                        `# Sometimes needed by ruby`
-
-  brew tap shopify/shopify && brew install shopify `# shopify CLI`  
-  brew tap heroku/brew && brew install heroku `# Heroku CLI`
-  ```
-
 ## Nix - Experimental
 
 To install:
@@ -144,6 +87,16 @@ cd dotfiles
 ```
 
 ⚠️ The above will prompt you about replacing existing dotfiles in case there's something you'd rather keep. The `.git` directory (and any other directory) is ignored.
+
+#### Brew packages
+
+Brew packages, casks and vscode plugins live in `Brewfile`.
+
+You can install them with
+
+```zsh
+brew bundle --global
+```
 
 ### Completions
 
