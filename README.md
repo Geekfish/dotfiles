@@ -82,7 +82,9 @@ Usually don't need to be install straight away.
     gh                   `# Github CLI` \
     coreutils            `# GNU core utils` \
     curl                 `# curl :)` \
-    jdx/tap/rtx          `# runtume version manager` \
+    mise                 `# runtume version manager` \
+    icu4c                `# Unicode lib for compiling postgres` \
+    pkg-config           `# Manage link flags for compilation` \
     ripgrep              `# even faster 'ack'` \
     diff-so-fancy        `# nicer-looking diffs` \
     fzf                  `# fuzzy finder` \

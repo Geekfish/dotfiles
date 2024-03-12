@@ -57,7 +57,7 @@ zmodule zsh-users/zsh-autosuggestions
 # }}} End configuration added by Zim install
 
 zmodule archive
-zmodule joke/zim-rtx
+zmodule joke/zim-mise
 zmodule fzf
 zmodule magic-enter
 zmodule utility
