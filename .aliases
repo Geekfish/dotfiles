@@ -27,6 +27,8 @@ git_purge_local () {
     fi
 }
 
+alias fixup="git commit --fixup=\$(git log --no-decorate --oneline master..HEAD | fzf | awk '{print \$1}')"
+
 rebase() {
     stashArg='--no-autostash'
 
