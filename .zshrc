@@ -2,6 +2,7 @@
 . $HOME/.ziminit
 . $HOME/.aliases
 . $HOME/.pathrc
+. $HOME/.mise-en-place
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
