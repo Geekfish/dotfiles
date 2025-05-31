@@ -2,10 +2,10 @@
 PKG_CONFIG_PATH = "/opt/homebrew/opt/icu4c/lib/pkgconfig"
 
 [tools]
-elixir = '1.16.2-otp-26'
-erlang = '26.2.3'
-node = '21.7.1'
-postgres = '16.2'
-python = '3.12.2'
-pre-commit = '3.6.2'
-kubectl = '1.29.3'
+elixir = "1.18.4-otp-27"
+erlang = "28.0"
+node = "24.1.0"
+postgres = "17.5"
+python = "3.13.3"
+pre-commit = "4.2.0"
+kubectl = "1.33.1"
