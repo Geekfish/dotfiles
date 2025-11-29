@@ -35,7 +35,6 @@ Before installing the dotfiles it may be a good idea to install some of the thin
 
 - ⌨️ [iTerm2](https://www.iterm2.com/)
 - 🍺 [Brew](https://brew.sh/)
-- 🦊 [Firefox](https://www.mozilla.org/en-US/firefox/new/)
 - 🔑 [1password](https://1password.com/)<sup>1</sup>
 - 🗃 [Google Drive](https://www.google.com/drive/download/)
 - 📝 [Obsidian](https://obsidian.md/)
@@ -49,32 +48,9 @@ Usually don't need to be install straight away.
 - 📽 [Deckset](https://www.deckset.com/)<sup>1</sup>
 - 🗝 [Keybase](https://keybase.io/docs/the_app/install_macos)
 - 💼 [Office 365](https://www.office.com/)<sup>1</sup>
-
-## Concentration
-
-- ☊ [Mindnode](https://mindnode.com/)<sup>1</sup>
 - 🎧 [Spotify](https://www.spotify.com/de/download/mac/)<sup>1</sup>
-
-## Development
-
-### Must-have
-
 - 💻 [Visual Studio Code](https://code.visualstudio.com/)
   Don't forget to sync settings!
-- 📯 [Postman](https://www.postman.com/downloads/)
-- 🌐 [Chrome](https://www.google.com/chrome/)
-- 📝 [Awesome Vimrc](https://github.com/amix/vimrc)
-
-## Nix - Experimental
-
-To install:
-
-```zsh
-<(curl -L https://nixos.org/nix/install)
-
-nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
-./result/bin/darwin-installer
-```
 
 ## Dotfiles
 
