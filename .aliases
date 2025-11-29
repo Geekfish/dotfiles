@@ -1,7 +1,11 @@
 ###########
 # General #
 ###########
-alias ll="ls -lha"
+alias l='ls -lah'
+alias la='ls -lAh'
+alias ll='ls -lh'
+alias ls='ls -G'
+alias lsa='ls -lah'
 alias latest="ls -lhat | head"
 alias vim="nvim"
 alias hidden_off='defaults write com.apple.Finder AppleShowAllFiles NO'

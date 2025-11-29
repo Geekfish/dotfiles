@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Link all the user-dir dotfiles
-ln -siF "$(pwd)"/.*(.) "$HOME"
+ln -si "$(pwd)"/.*(.) "$HOME"
 
 # Create .config dir if it doesn't exist
 mkdir -p "$HOME/.config"

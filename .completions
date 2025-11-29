@@ -20,3 +20,6 @@ fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/workspace/tools/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/workspace/tools/google-cloud-sdk/completion.zsh.inc"; fi
+
+# Initialize completion
+autoload -U compinit; compinit

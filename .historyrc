@@ -1,0 +1,15 @@
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
+
+setopt HIST_SAVE_NO_DUPS
+setopt INC_APPEND_HISTORY
+
+# Configure the push directory stack (most people don't need this)
+setopt AUTO_PUSHD
+setopt PUSHD_IGNORE_DUPS
+setopt PUSHD_SILENT
+
+# Use the up and down keys to navigate the history
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
