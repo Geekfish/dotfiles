@@ -1,4 +1,3 @@
-. $HOME/.historyrc
 . $HOME/.pathrc
 . $HOME/.completions
 . $HOME/.aliases
@@ -7,14 +6,15 @@
 # Optional private configuration, not in git
 [ -f ~/.privaterc ] && source ~/.privaterc
 
-[ -f "$(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh" ] && source "$(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
-
 type direnv > /dev/null && eval "$(direnv hook zsh)"
 type zoxide > /dev/null && eval "$(zoxide init zsh)"
 type starship > /dev/null && eval "$(starship init zsh)"
 
 # Vim keybindings
 bindkey -v
+
+# History (has to come after vim keybindings for history substring search bindings to work)
+. $HOME/.historyrc
 
 # Remove path separator from WORDCHARS.
 WORDCHARS=${WORDCHARS//[\/]}

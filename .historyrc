@@ -2,6 +2,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 
+[ -f "$(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh" ] && source "$(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh"
 setopt HIST_SAVE_NO_DUPS
 setopt INC_APPEND_HISTORY
 
