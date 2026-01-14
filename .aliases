@@ -61,3 +61,4 @@ rebase() {
 ##########
 # Require an elixir project with Phoenix
 alias search_routes="mix phx.routes | fzf"
+alias mix_fast="MIX_OS_DEPS_COMPILE_PARTITION_COUNT=5 mix"
