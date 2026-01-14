@@ -1,7 +1,7 @@
 . $HOME/.historyrc
+. $HOME/.pathrc
 . $HOME/.completions
 . $HOME/.aliases
-. $HOME/.pathrc
 . $HOME/.mise-en-place
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Optional private configuration, not in git

@@ -22,4 +22,26 @@ fi
 if [ -f "$HOME/workspace/tools/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/workspace/tools/google-cloud-sdk/completion.zsh.inc"; fi
 
 # Initialize completion
-autoload -U compinit; compinit
+autoload -Uz compinit
+
+# Check for insecure directories.
+# Insecure directories are directories that are not owned by the current user or by root.
+# But on work computers `workbrew` is also a user with permissions to install packages and we want to allow that.
+insecure=$(compaudit 2>&1 | grep '^/')
+
+if [[ -n "$insecure" ]]; then
+  owners=$(echo "$insecure" | xargs -I{} stat -f '%Su' {} | sort -u)
+  # Are all insecure files owned by `workbrew`?
+  if [[ "$owners" == "workbrew" ]]; then
+    compinit -i
+  else
+    echo "Insecure files owned by unexpected users:"
+    echo "$insecure" | while read -r file; do
+      owner=$(stat -f '%Su' "$file")
+      [[ "$owner" != "workbrew" ]] && echo "  $file ($owner)"
+    done
+    compinit
+  fi
+else
+  compinit
+fi
