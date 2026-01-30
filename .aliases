@@ -11,6 +11,9 @@ alias vim="nvim"
 alias hidden_off='defaults write com.apple.Finder AppleShowAllFiles NO'
 alias hidden_on='defaults write com.apple.Finder AppleShowAllFiles YES'
 alias weather='curl wttr.in'
+# Zoxide
+alias cd='z'
+
 
 #######
 # Git #
@@ -62,3 +65,4 @@ rebase() {
 # Require an elixir project with Phoenix
 alias search_routes="mix phx.routes | fzf"
 alias mix_fast="MIX_OS_DEPS_COMPILE_PARTITION_COUNT=5 mix"
+alias iex_mix_min="iex -S mix do loadpaths + app.config"

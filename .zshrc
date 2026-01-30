@@ -1,7 +1,7 @@
 . $HOME/.pathrc
 . $HOME/.completions
 . $HOME/.aliases
-. $HOME/.mise-en-place
+type mise > /dev/null && eval "$(mise activate zsh)"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Optional private configuration, not in git
 [ -f ~/.privaterc ] && source ~/.privaterc
