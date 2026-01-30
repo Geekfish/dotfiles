@@ -8,11 +8,17 @@
 	# Stash unstaged changes only
 	stashu = stash -k -u
 	# --
+	# Get the current "main" branch (e.g. master or main)
+	main-branch = "!git symbolic-ref refs/remotes/origin/HEAD | cut -d'/' -f4"
+	# --
 	# Pull-rebase from master (or specified branch) with auto-stash.
-	main-sync = "!f() { git pull --rebase --autostash origin ${1:-master};}; f"
+	main-sync = "!f() { git pull --rebase --autostash origin ${1:-$(git main-branch)};}; f"
+	# --
+	# Create a fixup commit on top of a previous commit that we can select through fzf
+	fix = "!git commit --fixup=$(git log --no-decorate --oneline $(git main-branch)..HEAD | fzf | awk '{print $1}')"
 	# --
 	# Delete branches that are already merged to master (or specified branch).
-	delete-merged = "!f() { local targetBranch=${1:-master} && git checkout -q $targetBranch && git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d && git for-each-ref refs/heads/ \"--format=%(refname:short)\" | while read branch; do mergeBase=$(git merge-base $targetBranch $branch) && [[ $(git cherry $targetBranch $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == \"-\"* ]] && git branch -D $branch; done; }; f"
+	delete-merged = "!f() { local targetBranch=${1:-$(git main-branch)} && git checkout -q $targetBranch && git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d && git for-each-ref refs/heads/ \"--format=%(refname:short)\" | while read branch; do mergeBase=$(git merge-base $targetBranch $branch) && [[ $(git cherry $targetBranch $(git commit-tree $(git rev-parse $branch^{tree}) -p $mergeBase -m _)) == \"-\"* ]] && git branch -D $branch; done; }; f"
 	# --
 	# Switch back to the previous branch
 	back = switch -
