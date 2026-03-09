@@ -16,7 +16,7 @@ alias weather='curl wttr.in'
 # Git #
 #######
 alias git_rel="git log \$(git tag --sort=committerdate | tail -1)..HEAD --pretty=format:\"* %s\""
-alias git_parent='git show-branch | sed "s/].*//" | grep "\*" | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -n1 | sed "s/^.*\[//"'
+alias git_parent='git show-branch | sed "s/].*//" | grep "\*" | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -n1 | sed "s/^.*\[//" | sed "s/[\^~].*//"'
 
 git_purge_local () {
     readonly branches=${$(git branch --merged | egrep -v "(^\*|$(git main_branch))"):?"No branches found – aborting."}
@@ -31,27 +31,56 @@ git_purge_local () {
 }
 
 rebase() {
-    stashArg='--no-autostash'
+  local stash_arg='--no-autostash'
 
-    if ! git diff-index --quiet HEAD; then
-        # We only care about stashing if there are unstaged changes
-        printf "Stash? (Y/n): "
-        read -r shouldStash
+  if ! git diff-index --quiet HEAD; then
+      printf "Stash? (Y/n): "
+      read -r should_stash
+      [[ ! $should_stash =~ ^[Nn]$ ]] && stash_arg='--autostash'
+  fi
 
-        if [[ ! $shouldStash =~ ^[Nn]$ ]]; then
-            stashArg='--autostash'
-        fi
-    fi
+  local base_branch="${1:-$(git_parent)}"
+  if [[ -z "$base_branch" ]]; then
+      echo "Could not detect parent branch. Pass one explicitly: rebase <branch>"
+      return 1
+  fi
 
+  local merge_base
+  merge_base=$(git merge-base HEAD "$base_branch") || {
+      echo "Could not find merge-base with '$base_branch'"
+      return 1
+  }
 
-    git log --color --graph --pretty=format:'%Cgreen%h%Creset %C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit | cat -n | less -R
+  echo "Parent branch: $base_branch"
+  echo ""
 
-    printf "Commit #: "
-    read -r commit
+  git log --color=always \
+      --pretty=format:'%C(green)%h%Creset %s %C(green)(%cr)%Creset %C(bold blue)<%an>%Creset' \
+      --abbrev-commit "${merge_base}..HEAD"
 
-    git rebase -i --autosquash $stashArg HEAD~$commit
+  echo ""
+  printf "Rebase [a]ll commits or [p]ick one? (a/p): "
+  read -r choice
+
+  case "$choice" in
+      p|P)
+          local selected
+          selected=$(
+              git log --color=always \
+                  --pretty=format:'%h %s %C(green)(%cr)%Creset %C(bold blue)<%an>%Creset' \
+                  --abbrev-commit "${merge_base}..HEAD" \
+              | fzf --ansi --no-sort --header="Pick the oldest commit to include"
+          )
+          [[ -z "$selected" ]] && return 0
+          local hash
+          hash=$(echo "$selected" | awk '{print $1}')
+          git rebase -i --autosquash "$stash_arg" "${hash}^"
+          ;;
+      *)
+          git rebase -i --autosquash "$stash_arg" "$merge_base"
+          ;;
+  esac
 }
-
 
 ##########
 # Elixir #
