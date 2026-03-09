@@ -7,7 +7,10 @@ type mise > /dev/null && eval "$(mise activate zsh)"
 [ -f ~/.privaterc ] && source ~/.privaterc
 
 type direnv > /dev/null && eval "$(direnv hook zsh)"
+
 type zoxide > /dev/null && eval "$(zoxide init zsh)"
+type zoxide > /dev/null && alias cd='z'
+
 type starship > /dev/null && eval "$(starship init zsh)"
 
 # Vim keybindings
