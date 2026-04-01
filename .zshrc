@@ -8,8 +8,11 @@ type mise > /dev/null && eval "$(mise activate zsh)"
 
 type direnv > /dev/null && eval "$(direnv hook zsh)"
 
-type zoxide > /dev/null && eval "$(zoxide init zsh)"
-type zoxide > /dev/null && alias cd='z'
+if [[ $- == *i* ]]; then
+  # Enable zoxide only in interactive mode
+  type zoxide > /dev/null && eval "$(zoxide init zsh)"
+  type zoxide > /dev/null && alias cd='z'
+fi
 
 type starship > /dev/null && eval "$(starship init zsh)"
 
