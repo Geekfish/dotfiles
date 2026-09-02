@@ -2,7 +2,7 @@
 # This can be used to add any extra completions from packages that are not managed by brew.
 # It must be defined before compinit
 FPATH=~/.zfunc:$FPATH
-#
+
 # To make Homebrew’s completions available in zsh,
 # you must get the Homebrew-managed zsh site-functions on your FPATH
 # before initialising zsh’s completion facility.
@@ -18,8 +18,13 @@ fi
 # Checkout brew completion instructions here for alternatives:
 # https://docs.brew.sh/Shell-Completion
 
-# The next line enables shell command completion for gcloud.
+# gcloud completions
 if [ -f "$HOME/workspace/tools/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/workspace/tools/google-cloud-sdk/completion.zsh.inc"; fi
+
+# Stripe CLI completions
+if type stripe &>/dev/null; then
+  FPATH=~/.stripe:$FPATH
+fi
 
 # Initialize completion
 autoload -Uz compinit compaudit
