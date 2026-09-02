@@ -19,7 +19,7 @@ alias git_rel="git log \$(git tag --sort=committerdate | tail -1)..HEAD --pretty
 alias git_parent='git show-branch | sed "s/].*//" | grep "\*" | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -n1 | sed "s/^.*\[//" | sed "s/[\^~].*//"'
 
 git_purge_local () {
-    readonly branches=${$(git branch --merged | egrep -v "(^\*|$(git main_branch))"):?"No branches found – aborting."}
+    readonly branches=${$(git branch --merged | egrep -v "(^\*|$(git main-branch))"):?"No branches found – aborting."}
     echo "The following LOCAL branches seem to be merged and will be purged:"'\n'
     echo "$branches"'\n'
     if read -q "choice? Press Y/y to continue"$'\n'; then
