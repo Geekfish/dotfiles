@@ -11,6 +11,7 @@ alias vim="nvim"
 alias hidden_off='defaults write com.apple.Finder AppleShowAllFiles NO'
 alias hidden_on='defaults write com.apple.Finder AppleShowAllFiles YES'
 alias weather='curl wttr.in'
+alias dbtf="dbt"
 
 #######
 # Git #
