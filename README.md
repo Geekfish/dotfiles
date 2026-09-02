@@ -10,10 +10,6 @@
     - [General](#general)
         - [Essentials](#essentials)
         - [Might be needed later](#might-be-needed-later)
-    - [Concentration](#concentration)
-    - [Development](#development)
-        - [Must-have](#must-have)
-    - [Nix - Experimental](#nix---experimental)
     - [Dotfiles](#dotfiles)
             - [Brew packages](#brew-packages)
         - [Completions](#completions)
@@ -35,6 +31,7 @@ Before installing the dotfiles it may be a good idea to install some of the thin
 
 - ⌨️ [iTerm2](https://www.iterm2.com/)
 - 🍺 [Brew](https://brew.sh/)
+- 🐏 [Herdr](https://herdr.dev/)
 - 🔑 [1password](https://1password.com/)<sup>1</sup>
 - 🗃 [Google Drive](https://www.google.com/drive/download/)
 - 📝 [Obsidian](https://obsidian.md/)
@@ -43,6 +40,7 @@ Before installing the dotfiles it may be a good idea to install some of the thin
 
 Usually don't need to be install straight away.
 
+- 🖥️ [Flameshot](https://flameshot.org/)
 - 🥞 [TablePlus](https://tableplus.com/)
 - 💬 [Signal](https://signal.org/)
 - 📽 [Deckset](https://www.deckset.com/)<sup>1</sup>
