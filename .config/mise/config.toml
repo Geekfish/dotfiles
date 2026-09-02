@@ -1,8 +1,9 @@
 [tools]
-elixir = "1.19.5-otp-28"
-erlang = "28.3.1"
-node = "24.3.0"
 postgres = "17.5"
 python = "3.13.5"
 pre-commit = "4.2.0"
 kubectl = "1.33.2"
+go = "1.26.1"
+dexter = "latest"
+
+[env]
