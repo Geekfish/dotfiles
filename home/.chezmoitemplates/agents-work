@@ -1,0 +1,5 @@
+{{- /* Work rules from the private repo. Empty until the private clone exists, so a first apply on a new machine needs a second run. */ -}}
+{{- $path := joinPath .chezmoi.homeDir ".local/share/dotfiles-work/agents-work.md" -}}
+{{- if and .work (stat $path) }}
+{{ include $path }}
+{{- end -}}

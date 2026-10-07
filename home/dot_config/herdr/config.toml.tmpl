@@ -1,0 +1,55 @@
+onboarding = false
+[ui]
+tab_bar_right = [
+  { type = "command", command = "bash {{ .chezmoi.homeDir }}/.config/herdr/bin/agent-counts.sh", interval_seconds = 5, timeout_seconds = 3 },
+]
+agent_panel_sort = "spaces"
+
+show_agent_labels_on_pane_borders = true
+[ui.toast]
+delivery = "herdr"
+
+[ui.toast.herdr]
+position = "bottom-left"
+
+[ui.sidebar]
+
+[ui.sidebar.spaces]
+rows = [
+  ["state_icon", "workspace"],
+  ["branch", "git_status"],
+  [{ token = "$caffeinate", fg = "#f9e2af", bold = true }],
+]
+
+[ui.sidebar.agents]
+row_gap = 0
+rows = [["state_icon", { token = "$provider", fg = "#9aa7b8", bold = false, dim = false }, "$title"], [{ token = "$context", fg = "#9aa7b8", bold = true, dim = false }, { token = "$limit", fg = "#84b084", bold = false, dim = true }]]
+
+[ui.sidebar.agents.rows_by_agent]
+claude = [["state_icon", { token = "$provider", fg = "#9c6553", bold = false, dim = false }, "$title"], [{ token = "$context", fg = "#9aa7b8", bold = true, dim = false }, { token = "$limit", fg = "#84b084", bold = false, dim = true }]]
+codex = [["state_icon", { token = "$provider", fg = "#5f7b96", bold = false, dim = false }, "$title"], [{ token = "$context", fg = "#9aa7b8", bold = true, dim = false }, { token = "$limit", fg = "#84b084", bold = false, dim = true }]]
+
+[[keys.command]]
+key = "ctrl+shift+u"
+type = "plugin_action"
+command = "usagebar.open-limits"
+description = "Agent Usage: open limits pane"
+
+[[keys.command]]
+key = "ctrl+shift+m"
+type = "plugin_action"
+command = "usagebar.refresh"
+description = "Agent Usage: refresh sidebar meters"
+
+[[keys.command]]
+key = "prefix+a"
+type = "plugin_action"
+command = "es.quick-actions.open"
+description = "Quick actions (Herdr native actions)"
+
+[[keys.command]]
+key = "prefix+shift+a"
+type = "plugin_action"
+command = "jt.command-palette.open"
+description = "Command palette (plugin actions)"
+
