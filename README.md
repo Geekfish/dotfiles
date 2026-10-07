@@ -11,6 +11,9 @@
         - [Essentials](#essentials)
         - [Might be needed later](#might-be-needed-later)
     - [Dotfiles](#dotfiles)
+        - [New machine](#new-machine)
+        - [Machine with the old symlinked dotfiles](#machine-with-the-old-symlinked-dotfiles)
+        - [Everyday use](#everyday-use)
             - [Brew packages](#brew-packages)
         - [Completions](#completions)
         - [GPG](#gpg)
@@ -52,18 +55,66 @@ Usually don't need to be install straight away.
 
 ## Dotfiles
 
-Assuming you checkout this repo in your `$HOME` directory, you can run the following to symlink all the dotfiles:
+The dotfiles are managed with [chezmoi](https://www.chezmoi.io/). The repo lives in `~/dotfiles`. Files under `home/` map to `$HOME`.
+
+On the first run, chezmoi asks:
+
+- if this is a work machine
+- your name, emails and PGP signing key IDs for git
+
+The answers stay in `~/.config/chezmoi/chezmoi.toml` on that machine. They are never committed. Signing key IDs refer to public PGP keys.
+
+Work machines also pull a private repo with work-only files. It needs an SSH key with access to that repo.
+
+### New machine
+
+1. Install [Brew](https://brew.sh/), then chezmoi:
 
 ```zsh
-cd dotfiles
-./install_config.sh
+brew install chezmoi
 ```
 
-⚠️ The above will prompt you about replacing existing dotfiles in case there's something you'd rather keep. The `.git` directory (and any other directory) is ignored.
+2. Clone and apply. Answer the prompts.
+
+```zsh
+chezmoi init --apply --source ~/dotfiles Geekfish/dotfiles
+```
+
+### Machine with the old symlinked dotfiles
+
+The old setup linked files from `~/dotfiles` into `$HOME`. chezmoi copies them instead.
+
+1. Install chezmoi and update the repo. Some old links point to moved files and break until step 3.
+
+```zsh
+brew install chezmoi
+cd ~/dotfiles && git pull
+```
+
+2. Create the machine config. Answer the prompts with the values from `~/.gitconfig_personal` and `~/.gitconfig_work`.
+
+```zsh
+chezmoi init --source ~/dotfiles
+```
+
+3. Review, then replace the old links with real files:
+
+```zsh
+chezmoi diff
+chezmoi apply
+```
+
+4. Delete `~/.gitconfig_personal` and `~/.gitconfig_work`. chezmoi now writes these values.
+
+### Everyday use
+
+- Edit a file: `chezmoi edit ~/.zshrc`, or edit it under `~/dotfiles/home/` and run `chezmoi apply`.
+- Pick up a change made directly in `$HOME`: `chezmoi re-add`.
+- Pull and apply changes from another machine: `chezmoi update`.
 
 #### Brew packages
 
-Brew packages, casks and vscode plugins live in `Brewfile`.
+Brew packages, casks and VS Code plugins live in `Brewfile`.
 
 You can install them with
 
@@ -95,15 +146,7 @@ Next time you're asked for the passphrase, it will be stored in the keychain.
 
 2. Make sure you import a valid GPG key, see also [GPG, Github and Keybase guide](https://github.com/pstadler/keybase-gpg-github).
 
-3. Ensure the key and author details are actually used, by setting up `.gitconfig_personal` (not shared here)
-
-```
-[user]
-  name = "..."
-  email = "..."
-  signingkey = "..."
-
-```
+3. chezmoi sets the key and author details from the answers to its prompts.
 
 ## Fonts
 
