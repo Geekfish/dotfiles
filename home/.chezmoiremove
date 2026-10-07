@@ -3,3 +3,4 @@
 .agents/skills/clickbait-announce
 .claude/skills/herdr-new-task
 .claude/skills/clickbait-announce
+.gitignore_global
