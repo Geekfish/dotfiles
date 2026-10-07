@@ -1,5 +1,6 @@
 .DS_Store
 {{- if not .work }}
+.gitconfig_work
 .config/mise/conf.d/work.toml
 .config/herdr-new-task
 my-workspace.toml

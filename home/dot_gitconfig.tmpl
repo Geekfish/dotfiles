@@ -1,7 +1,10 @@
 [include]
   path = ~/.gitconfig_shared
-[include]
-  path = ~/.gitconfig_personal
+[user]
+  name = {{ .name | quote }}
+  email = {{ .email | quote }}
+  # Public PGP key ID
+  signingkey = {{ .signingkey | quote }}
 [includeIf "gitdir:~/workspace/work/"]
   path = ~/.gitconfig_work
 [filter "lfs"]

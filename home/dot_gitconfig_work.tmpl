@@ -1,0 +1,8 @@
+[user]
+  name = {{ .name | quote }}
+  email = {{ .workEmail | quote }}
+  # Public PGP key ID
+  signingkey = {{ .workSigningkey | quote }}
+# Work-only settings from the private repo
+[include]
+  path = ~/.local/share/dotfiles-work/gitconfig
