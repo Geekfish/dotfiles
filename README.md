@@ -15,7 +15,7 @@
         - [Machine with the old symlinked dotfiles](#machine-with-the-old-symlinked-dotfiles)
         - [Everyday use](#everyday-use)
         - [Setup scripts](#setup-scripts)
-        - [Agent skills](#agent-skills)
+        - [Agent plugins](#agent-plugins)
         - [Agent instructions](#agent-instructions)
         - [GPG](#gpg)
     - [Fonts](#fonts)
@@ -119,18 +119,12 @@ chezmoi apply
 
 - **Brew packages:** runs `brew bundle --global` again whenever `Brewfile` changes. Brew packages, casks and VS Code plugins live in `Brewfile`.
 - **Herdr plugins:** installs the Herdr plugins listed in the script that are missing. Herdr keeps its own plugin state, so the repo only lists the plugins.
+- **Agent plugins:** adds the agent-plugins marketplace and installs its plugins in Claude Code and Codex. Runs again when the plugin list changes.
 - **Completions:** generates Heroku and Poetry completions into `~/.zfunc`, once per machine.
 
-### Agent skills
+### Agent plugins
 
-Own skills live in `home/dot_agents/skills/`, so they land in `~/.agents/skills`. Codex and OpenCode read that folder directly. Claude Code reads `~/.claude/skills` only, so each skill also has a link in `home/dot_claude/skills/`.
-
-To add a skill, put its folder under `home/dot_agents/skills/`, then add the link:
-
-```zsh
-echo "../../.agents/skills/<name>" > ~/dotfiles/home/dot_claude/skills/symlink_<name>
-chezmoi apply
-```
+Own skills live in the [agent-plugins](https://github.com/Geekfish/agent-plugins) marketplace, not here. A setup script adds that marketplace and installs its plugins in Claude Code and Codex. OpenCode plugins need a separate install process, see the work setup.
 
 ### Agent instructions
 

@@ -1,0 +1,5 @@
+# Skills that moved to the agent-plugins marketplace. Delete the old copies and links.
+.agents/skills/herdr-new-task
+.agents/skills/clickbait-announce
+.claude/skills/herdr-new-task
+.claude/skills/clickbait-announce
