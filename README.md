@@ -63,7 +63,9 @@ On the first run, chezmoi asks:
 - if this is a work machine, and if so, the URL of the private work repo
 - your name, emails and PGP signing key IDs for git
 
-The answers stay in `~/.config/chezmoi/chezmoi.toml` on that machine. They are never committed. Signing key IDs refer to public PGP keys.
+The answers stay in `~/.config/chezmoi/chezmoi.toml` on that machine. They are never written to this repo's files. Signing key IDs refer to public PGP keys.
+
+Commits to this repo still carry an author email and a signature, like any git commit. That email is a separate choice per repo. It does not make the emails entered at the prompts public, and they do not have to match it.
 
 Work machines also ask for the git URL of a private repo with work-only files. chezmoi clones it to `~/.local/share/dotfiles-work`, and this repo only links to its files. The clone needs an SSH key with access to that repo.
 
