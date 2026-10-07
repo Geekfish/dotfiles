@@ -28,4 +28,7 @@ WORDCHARS=${WORDCHARS//[\/]}
 # Move to directories without cd
 # setopt autocd
 
+# Don't automatically load  ~/.claude/skills in OpenCode
+export OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1
+
 echo "👋 'ello!"
