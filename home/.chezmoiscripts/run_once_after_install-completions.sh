@@ -1,4 +1,5 @@
 #!/bin/zsh
+# Completions that tools generate themselves. Runs once per machine.
 
 # Custom directory for adding completions,
 # already added to FPATH in .completions

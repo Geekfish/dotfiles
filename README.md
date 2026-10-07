@@ -14,8 +14,9 @@
         - [New machine](#new-machine)
         - [Machine with the old symlinked dotfiles](#machine-with-the-old-symlinked-dotfiles)
         - [Everyday use](#everyday-use)
-            - [Brew packages](#brew-packages)
-        - [Completions](#completions)
+        - [Setup scripts](#setup-scripts)
+        - [Agent skills](#agent-skills)
+        - [Agent instructions](#agent-instructions)
         - [GPG](#gpg)
     - [Fonts](#fonts)
 
@@ -112,23 +113,30 @@ chezmoi apply
 - Pick up a change made directly in `$HOME`: `chezmoi re-add`.
 - Pull and apply changes from another machine: `chezmoi update`.
 
-#### Brew packages
+### Setup scripts
 
-Brew packages, casks and VS Code plugins live in `Brewfile`.
+`chezmoi apply` also runs these scripts from `home/.chezmoiscripts/`:
 
-You can install them with
+- **Brew packages:** runs `brew bundle --global` again whenever `Brewfile` changes. Brew packages, casks and VS Code plugins live in `Brewfile`.
+- **Herdr plugins:** installs the Herdr plugins listed in the script that are missing. Herdr keeps its own plugin state, so the repo only lists the plugins.
+- **Completions:** generates Heroku and Poetry completions into `~/.zfunc`, once per machine.
+
+### Agent skills
+
+Own skills live in `home/dot_agents/skills/`, so they land in `~/.agents/skills`. Codex and OpenCode read that folder directly. Claude Code reads `~/.claude/skills` only, so each skill also has a link in `home/dot_claude/skills/`.
+
+To add a skill, put its folder under `home/dot_agents/skills/`, then add the link:
 
 ```zsh
-brew bundle --global
+echo "../../.agents/skills/<name>" > ~/dotfiles/home/dot_claude/skills/symlink_<name>
+chezmoi apply
 ```
 
-### Completions
+### Agent instructions
 
-You can install optional completions by running:
+`home/.chezmoitemplates/agents.md` holds the shared rules for coding agents. chezmoi writes them into `~/.claude/CLAUDE.md`, `~/.codex/AGENTS.md` and `~/.config/opencode/AGENTS.md`, because Codex and OpenCode cannot import other files. Edit the shared file, not the generated ones, then run `chezmoi apply`.
 
-```zsh
-./install_completions.sh
-```
+Each generated file has its own secret word. Ask an agent for it to check that it loaded its file.
 
 ### GPG
 

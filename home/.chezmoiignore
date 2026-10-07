@@ -1,4 +1,4 @@
-.DS_Store
+**/.DS_Store
 {{- if not .work }}
 .gitconfig_work
 .config/mise/conf.d/work.toml

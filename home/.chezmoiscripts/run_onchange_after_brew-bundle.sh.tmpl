@@ -1,0 +1,4 @@
+#!/bin/zsh
+# Runs again whenever the Brewfile changes. Brewfile hash: {{ include "dot_Brewfile" | sha256sum }}
+set -e
+brew bundle --global
