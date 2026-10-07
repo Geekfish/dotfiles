@@ -1,0 +1,7 @@
+{{- if .work }}
+# Private work-only files. The links in this repo point into this clone.
+[".local/share/dotfiles-work"]
+  type = "git-repo"
+  url = {{ .workRepo | quote }}
+  refreshPeriod = "168h"
+{{- end }}

@@ -5,5 +5,6 @@ pre-commit = "4.2.0"
 kubectl = "1.33.2"
 go = "1.26.1"
 dexter = "latest"
+node = "latest"
 
 [env]

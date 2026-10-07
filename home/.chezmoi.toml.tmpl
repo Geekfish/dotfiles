@@ -4,9 +4,11 @@
 {{- $email := promptStringOnce . "email" "Personal git email" -}}
 {{- /* Public PGP key ID used to sign commits, as shown by: gpg --list-secret-keys --keyid-format=long */ -}}
 {{- $signingkey := promptStringOnce . "signingkey" "Personal PGP signing key ID (public)" -}}
+{{- $workRepo := "" -}}
 {{- $workEmail := "" -}}
 {{- $workSigningkey := "" -}}
 {{- if $work -}}
+{{-   $workRepo = promptStringOnce . "workRepo" "Git URL of the private work dotfiles repo" -}}
 {{-   $workEmail = promptStringOnce . "workEmail" "Work git email" -}}
 {{-   $workSigningkey = promptStringOnce . "workSigningkey" "Work PGP signing key ID (public)" -}}
 {{- end -}}
@@ -17,5 +19,6 @@ sourceDir = {{ .chezmoi.workingTree | quote }}
   name = {{ $name | quote }}
   email = {{ $email | quote }}
   signingkey = {{ $signingkey | quote }}
+  workRepo = {{ $workRepo | quote }}
   workEmail = {{ $workEmail | quote }}
   workSigningkey = {{ $workSigningkey | quote }}

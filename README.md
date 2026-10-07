@@ -59,12 +59,12 @@ The dotfiles are managed with [chezmoi](https://www.chezmoi.io/). The repo lives
 
 On the first run, chezmoi asks:
 
-- if this is a work machine
+- if this is a work machine, and if so, the URL of the private work repo
 - your name, emails and PGP signing key IDs for git
 
 The answers stay in `~/.config/chezmoi/chezmoi.toml` on that machine. They are never committed. Signing key IDs refer to public PGP keys.
 
-Work machines also pull a private repo with work-only files. It needs an SSH key with access to that repo.
+Work machines also ask for the git URL of a private repo with work-only files. chezmoi clones it to `~/.local/share/dotfiles-work`, and this repo only links to its files. The clone needs an SSH key with access to that repo.
 
 ### New machine
 
