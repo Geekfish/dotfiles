@@ -9,6 +9,8 @@ plugins=(
   enekos/herdr-quick-actions@e9305cab44b766952ad8aafaa0a69bd3f659e159
   tgdn/herdr-caffeinated@506e80bfece279e34edf4e6c91c21d37996e3ee7
   JanTvrdik/herdr-command-palette@eab940018c2135ac23718efa11e23e9dddcd2a75
+  # Fork of senna-lang/herdr-agent-usage with a sidebar fix for unlisted agents. Move back to upstream once it merges.
+  Geekfish/herdr-agent-usage@66f2d5845745cae7419e8c1df61b3766a09b6cf8
 )
 installed=$(herdr plugin list)
 for plugin in $plugins; do
