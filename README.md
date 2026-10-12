@@ -107,7 +107,7 @@ chezmoi diff
 chezmoi apply
 ```
 
-4. Delete `~/.gitconfig_personal` and `~/.gitconfig_work`. chezmoi now writes these values.
+4. Delete `~/.gitconfig_personal`. chezmoi now writes its values into `~/.gitconfig`. Keep `~/.gitconfig_work`, because chezmoi now writes that file.
 
 ### Everyday use
 
