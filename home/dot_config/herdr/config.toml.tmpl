@@ -2,6 +2,7 @@ onboarding = false
 [ui]
 tab_bar_right = [
   { type = "command", command = "bash {{ .chezmoi.homeDir }}/.config/herdr/bin/agent-counts.sh", interval_seconds = 5, timeout_seconds = 3 },
+  { type = "command", command = "bash {{ .chezmoi.homeDir }}/.config/herdr/bin/plugin-updates.sh status", interval_seconds = 300, timeout_seconds = 3 },
 ]
 agent_panel_sort = "spaces"
 
@@ -53,3 +54,17 @@ type = "plugin_action"
 command = "jt.command-palette.open"
 description = "Command palette (plugin actions)"
 
+[[keys.command]]
+key = "prefix+alt+u"
+type = "popup"
+command = "bash {{ .chezmoi.homeDir }}/.config/herdr/bin/plugin-updates.sh pick"
+width = "80%"
+height = "80%"
+description = "Herdr plugin updates"
+
+{{- /* Work-only keybindings from the private repo. Empty until the private clone exists. */ -}}
+{{- $workKeys := joinPath .chezmoi.homeDir ".local/share/dotfiles-work/herdr-keys.toml" -}}
+{{- if and .work (stat $workKeys) }}
+
+{{ include $workKeys }}
+{{- end }}
