@@ -52,7 +52,7 @@ status() {
   fi
   local n
   n=$(wc -l < "$LIST" 2>/dev/null | tr -d ' ') || n=0
-  [ "${n:-0}" -gt 0 ] && echo "⬆ $n plugin update$([ "$n" -gt 1 ] && echo s)" || true
+  [ "${n:-0}" -gt 0 ] && echo "⬆ $n plugin update$([ "$n" -gt 1 ] && echo s) · prefix ⇧U" || true
 }
 
 preview() { # one fzf line: kind, name, from, to, where
