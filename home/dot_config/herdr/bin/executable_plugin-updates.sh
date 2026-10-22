@@ -57,10 +57,15 @@ status() {
   # The tab bar runs this every few seconds with a short timeout, so it never waits on the network.
   # A lock older than 10 minutes belongs to a refresh that died.
   find "$CACHE" -maxdepth 1 -name lock -mmin +10 -exec rmdir {} + 2>/dev/null || true
-  # Herdr kills the whole process group when this command ends, so the refresh runs in its own
-  # session. macOS has no setsid command.
+  # Herdr kills the whole process group as soon as this command ends, so the refresh runs in its
+  # own session. perl waits until the child has left the group, or the kill can beat it.
+  # macOS has no setsid command.
   if [ "$(date -r "$LIST" +%F 2>/dev/null)" != "$(date +%F)" ] && mkdir "$CACHE/lock" 2>/dev/null; then
-    perl -MPOSIX -e 'POSIX::setsid(); exec @ARGV' bash "$0" background > /dev/null 2>&1 &
+    perl -MPOSIX -e '
+      pipe(my $r, my $w);
+      if (fork) { close $w; <$r>; exit }
+      close $r; POSIX::setsid(); close $w; exec @ARGV
+    ' bash "$0" background > "$CACHE/refresh.log" 2>&1
   fi
   local n
   n=$(wc -l < "$LIST" 2>/dev/null | tr -d ' ') || n=0
