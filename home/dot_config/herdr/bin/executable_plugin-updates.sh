@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Herdr plugin updates: a once-a-day check, a tab bar hint, and a picker that applies them.
 # Herdr has no update command. GitHub plugins are pinned to reviewed commits in the chezmoi
-# install script, so an update moves that pin and reinstalls. Linked plugins are git clones,
-# so an update is a fast-forward pull.
+# install script, so an update moves that pin and reinstalls. My own plugins have no pin, so
+# an update reinstalls the latest commit. Linked plugins are git clones, so an update is a
+# fast-forward pull.
 #
 # Usage: plugin-updates.sh status   tab bar text. Reads the cache. Starts a refresh once a day.
 #        plugin-updates.sh refresh  check every plugin now
@@ -10,7 +11,7 @@
 set -euo pipefail
 
 CACHE=${XDG_CACHE_HOME:-$HOME/.cache}/herdr-plugin-updates
-LIST=$CACHE/updates.tsv # kind, name, from, to, where. kind is github or local.
+LIST=$CACHE/updates.tsv # kind, name, from, to, where. kind is github, unpinned or local.
 REGISTRY=$HOME/.config/herdr/plugins.json
 export GIT_TERMINAL_PROMPT=0 # a fetch that wants a password fails instead of hanging
 mkdir -p "$CACHE"
@@ -30,6 +31,15 @@ refresh() {
       printf 'github\t%s\t%s\t%s\t%s\n' "$repo" "$from" "$to" "$repo" >> "$tmp"
     fi
   done
+  # Unpinned plugins: the installed commit comes from Herdr's registry instead of the pin.
+  for repo in $(grep -oE '^\s+[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$' "$(pins)"); do
+    from=$(jq -r --arg r "$repo" '.[] | select(.source.kind == "github" and .source.owner + "/" + .source.repo == $r) | .source.resolved_commit' "$REGISTRY")
+    [ -n "$from" ] || continue
+    to=$(git ls-remote "https://github.com/$repo" HEAD | cut -f1) && [ -n "$to" ] || { touch "$LIST"; return 1; }
+    if [ "$to" != "$from" ] && [ "$(gh api "repos/$repo/compare/$from...$to" --jq .status 2>/dev/null || echo ahead)" = ahead ]; then
+      printf 'unpinned\t%s\t%s\t%s\t%s\n' "$repo" "$from" "$to" "$repo" >> "$tmp"
+    fi
+  done
   jq -r '.[] | select(.source.kind == "local") | .plugin_id + "\t" + .plugin_root' "$REGISTRY" |
     while IFS=$'\t' read -r id root; do
       root=$(git -C "$root" rev-parse --show-toplevel 2>/dev/null) || continue
@@ -47,8 +57,10 @@ status() {
   # The tab bar runs this every few seconds with a short timeout, so it never waits on the network.
   # A lock older than 10 minutes belongs to a refresh that died.
   find "$CACHE" -maxdepth 1 -name lock -mmin +10 -exec rmdir {} + 2>/dev/null || true
+  # Herdr kills the whole process group when this command ends, so the refresh runs in its own
+  # session. macOS has no setsid command.
   if [ "$(date -r "$LIST" +%F 2>/dev/null)" != "$(date +%F)" ] && mkdir "$CACHE/lock" 2>/dev/null; then
-    (trap 'rmdir "$CACHE/lock"' EXIT; refresh) > /dev/null 2>&1 &
+    perl -MPOSIX -e 'POSIX::setsid(); exec @ARGV' bash "$0" background > /dev/null 2>&1 &
   fi
   local n
   n=$(wc -l < "$LIST" 2>/dev/null | tr -d ' ') || n=0
@@ -83,6 +95,8 @@ pick() {
     echo "Updating $name"
     if [ "$kind" = local ]; then
       git -C "$where" pull -q --ff-only < /dev/null || echo "  FAILED: git pull in $where"
+    elif [ "$kind" = unpinned ]; then
+      herdr plugin install --yes "$name" < /dev/null > /dev/null || echo "  FAILED: herdr plugin install $name"
     elif herdr plugin install --yes --ref "$to" "$name" < /dev/null > /dev/null; then
       sed -i '' "s|${name//./\\.}@$from|$name@$to|" "$(pins)" && changed=1
     else
@@ -96,6 +110,7 @@ pick() {
 
 case "${1:-status}" in
   status) status ;;
+  background) trap 'rmdir "$CACHE/lock"' EXIT; refresh ;;
   refresh) refresh ;;
   pick) pick ;;
   preview) preview "$2" ;;
