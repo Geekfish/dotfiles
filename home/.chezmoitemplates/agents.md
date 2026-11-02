@@ -17,8 +17,16 @@ Use optimal formatting for easy reading. Use bullets, short sentences. Prefer ac
 Consider "titles" for complex bullet points, e.g `- *Use Titles*: for each bullet point write the "title" part in bolt, unless the point is short enough to not need a title.`
 Don't split a bullet point and its explanation into separate same-level bullets. Merge them into one bullet or use nested bullets.
 
+If a chat reply holds several parallel items (reasons, gaps, options, steps), use a numbered or bulleted list, not a paragraph. Prose enumerations are hard for me to read. This overrides the simple-english plugin rule that replies use prose with no lists.
+
 ### Terms
 Prefer simple language. No metaphors. Use international English, avoid Americanisms and "LLM-speak". E.g. avoid terms like: iff ("if" is enough), smoking gun ("proof"), grandfathering ("backwards compatible" or similar), net diff ("diff" is enough), net new ("new") etc.
+
+Use literal words. Use the plain name of a thing ("violation", "error"), not tool jargon or a figure of speech ("hit", "leave its hits"). A reader who does not know the tool must be able to act on each sentence.
+
+## Project memory
+
+Before project work, read `~/workspace/second-brain/projects/<project>/agent-memory.md` if it exists. `<project>` is the name of the main repository folder, also in a worktree.
 
 ## Writing MRs and Docs
 
