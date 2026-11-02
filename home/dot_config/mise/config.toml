@@ -4,7 +4,8 @@ python = "3.13.5"
 pre-commit = "4.2.0"
 kubectl = "1.33.2"
 go = "1.26.1"
-dexter = "latest"
+"aqua:remoteoss/dexter" = "latest"
 node = "latest"
+rust = "latest"
 
 [env]
