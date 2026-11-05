@@ -130,7 +130,7 @@ Own skills live in the [agent-plugins](https://github.com/Geekfish/agent-plugins
 
 The local sidebar plugins live in `home/dot_config/opencode/plugins/`. chezmoi installs them, and OpenCode discovers them automatically. No package install or extra configuration needed.
 
-- [session-id](home/dot_config/opencode/plugins/session-id/tui.tsx) shows the current OpenCode session ID.
+- [session-id](home/dot_config/opencode/plugins/session-id/tui.tsx) shows the current OpenCode session ID and the local date and time of its last user or assistant message.
 - [session-links](home/dot_config/opencode/plugins/session-links/tui.tsx) lists the Linear tickets and MRs/PRs of the current session, grouped and rendered as clickable terminal links. MRs and PRs are auto-reported by a tool hook the first time their URL appears in tool output; agents self-report bare Linear ticket ids via the plugin's `links_report` tool. No APIs are called. Links need a terminal with OSC 8 support; elsewhere they are plain text.
 
 ### Agent instructions
