@@ -42,6 +42,7 @@ Before project work, read `~/workspace/second-brain/projects/<project>/agent-mem
   -----
   Written by Claude on behalf of Eleni Lixourioti
   ```
+- Public repos (issues, PRs, comments): always ask me whether to add that footer. Don't add it by default.
 
 ## MCP Connectivity
 
