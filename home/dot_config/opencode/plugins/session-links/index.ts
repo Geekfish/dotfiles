@@ -44,33 +44,39 @@ async function writeReport(sessionID: string, report: Report) {
   await writeFile(path(sessionID), JSON.stringify(report))
 }
 
-const LINEAR_URL = /linear\.app\/[^/\s"')]+\/issue\/([A-Za-z0-9][A-Za-z0-9_]*-\d+)/g
-const MR_URL = /https?:\/\/[^\s"'<()]+\/-\/merge_requests\/\d+|https?:\/\/(?:www\.)?github\.com\/[\w.-]+\/[\w.-]+\/pull\/\d+/g
+// Backslash is excluded because the text is JSON-encoded: newlines arrive as a
+// literal "\n", which would otherwise glue consecutive URLs into one match.
+const MR_URL = /https?:\/\/[^\s"'<()\\]+\/-\/merge_requests\/\d+|https?:\/\/(?:www\.)?github\.com\/[\w.-]+\/[\w.-]+\/pull\/\d+/g
 
-// URLs only: bare ticket ids (ABC-123) are too false-positive-prone to
-// auto-report, so the agent self-reports those via links_report.
-async function reportSeen(sessionID: string, text: string) {
+// Only tools that create or push to an MR. Any other output (lists, logs,
+// skill text) mentions MRs the session isn't working on.
+const MR_TOOL = /(^|\.)(save_merge_request|create_merge_request|create_pull_request)$/
+const MR_COMMAND = /\b(glab mr create|gh pr create|git push)\b/
+
+function createsMR(tool: string, input: unknown) {
+  if (MR_TOOL.test(tool)) return true
+  const command = (input as { command?: unknown } | undefined)?.command
+  return tool === "shell" && typeof command === "string" && MR_COMMAND.test(command)
+}
+
+async function reportMRs(sessionID: string, text: string) {
+  const found = [...text.matchAll(MR_URL)].map((m) => m[0])
+  if (found.length === 0) return
   const report = await readReport(sessionID)
-  const prev = new Set([...report.tickets, ...report.mrs])
-  const fresh = [...text.matchAll(LINEAR_URL), ...text.matchAll(MR_URL)].map((m) => m[0]).filter((url) => !prev.has(url))
-  if (fresh.length === 0) return
-  const mrs = new Set(report.mrs)
-  const tickets = new Set(report.tickets)
-  for (const url of fresh) {
-    if (url.includes("linear.app")) tickets.add(url.match(/issue\/([A-Za-z0-9_]+-\d+)/)![1].toUpperCase())
-    else mrs.add(url)
-  }
-  await writeReport(sessionID, { tickets: [...tickets], mrs: [...mrs] })
+  const mrs = new Set([...report.mrs, ...found])
+  if (mrs.size === report.mrs.length) return
+  await writeReport(sessionID, { ...report, mrs: [...mrs] })
 }
 
 export default Plugin.define({
   id: "local.session-links",
   async setup(ctx) {
     void prune()
-    // Auto-report MR/PR/Linear URLs the first time they appear in tool output.
+    // Tickets are not auto-reported: Linear URLs show up in search results and
+    // skill examples far more often than for tickets the session works on.
     await ctx.tool.hook("execute.after", (event) => {
-      if (event.status !== "completed") return
-      void reportSeen(event.sessionID, JSON.stringify(event.result)).catch(() => {})
+      if (event.status !== "completed" || !createsMR(event.tool, event.input)) return
+      void reportMRs(event.sessionID, JSON.stringify(event.result)).catch(() => {})
     })
 
     await ctx.tool.transform((editor) => {
@@ -79,7 +85,7 @@ export default Plugin.define({
         name: "report",
         description:
           "Report Linear tickets that this session opened or is working on, so they appear in the sidebar. " +
-          "MRs and PRs are picked up automatically; use this tool for bare ticket ids. " +
+          "MRs and PRs you create or push to are picked up automatically. " +
           "Call again later to add more entries; earlier entries are kept.",
         input: {
           type: "object",
@@ -91,7 +97,8 @@ export default Plugin.define({
         options: { namespace: "links" },
         execute: async (input, context) => {
           const prev = await readReport(context.sessionID)
-          const next = { tickets: [...new Set([...prev.tickets, ...(input.tickets ?? [])])], mrs: prev.mrs }
+          const added = (input.tickets ?? []).map((id: string) => id.trim().toUpperCase())
+          const next = { tickets: [...new Set([...prev.tickets, ...added])], mrs: prev.mrs }
           await writeReport(context.sessionID, next)
           return { content: `Recorded ${next.tickets.length} ticket(s) for the sidebar.` }
         },
