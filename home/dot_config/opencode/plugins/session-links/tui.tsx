@@ -27,9 +27,9 @@ export default Plugin.define({
       } catch {
         return
       }
-      const tickets = [...new Set(report.tickets ?? [])].map((id) => ({
-        key: id.toUpperCase(),
-        url: `https://linear.app/issue/${id.toUpperCase()}`,
+      const tickets = [...new Set((report.tickets ?? []).map((id) => id.toUpperCase()))].map((id) => ({
+        key: id,
+        url: `https://linear.app/issue/${id}`,
       }))
       const mrs = [...new Set(report.mrs ?? [])].map((url) => ({ key: mrKey(url), url }))
       setStore((draft) => {
