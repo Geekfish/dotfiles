@@ -119,7 +119,7 @@ chezmoi apply
 
 `chezmoi apply` also runs these scripts from `home/.chezmoiscripts/`:
 
-- **Brew packages:** runs `brew bundle --global` again whenever `Brewfile` changes. Brew packages, casks and VS Code plugins live in `Brewfile`.
+- **Brew packages:** runs `brew bundle --global` again whenever `Brewfile` changes. Brew packages and casks live in `Brewfile`. On work machines it also includes the private repo's `Brewfile`.
 - **Herdr plugins:** installs the Herdr plugins listed in the script that are missing. Herdr keeps its own plugin state, so the repo only lists the plugins.
 - **Agent plugins:** adds the agent-plugins marketplace and installs its plugins in Claude Code and Codex. Runs again when the plugin list changes.
 - **Completions:** generates Heroku and Poetry completions into `~/.zfunc`, once per machine.
