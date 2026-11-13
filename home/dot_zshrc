@@ -32,3 +32,8 @@ WORDCHARS=${WORDCHARS//[\/]}
 export OPENCODE_DISABLE_CLAUDE_CODE_SKILLS=1
 
 echo "👋 'ello!"
+
+# Shell tools can replace PATH after Rex sets it.
+if [ -n "$REX_BIN_DIR" ]; then
+    export PATH="$REX_BIN_DIR:$PATH"
+fi
