@@ -8,7 +8,6 @@ if [ -f "$HOME/workspace/tools/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/w
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Keep Rex's CLI ahead of other installed versions.
 if [ -n "$REX_BIN_DIR" ]; then
     export PATH="$REX_BIN_DIR:$PATH"
 fi
