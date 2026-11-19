@@ -6,7 +6,7 @@
 set -e
 type herdr > /dev/null || { echo "herdr not installed, skipping plugins"; exit 0; }
 plugins=(
-  plannotator/herdr-annotate@a9973b43c1fc90044a9f15755e310e12b8465abb
+  plannotator/herdr-annotate@dd147a9faf5ab7d716a31abca070c80af508ffbc
   enekos/herdr-quick-actions@e9305cab44b766952ad8aafaa0a69bd3f659e159
   tgdn/herdr-caffeinated@506e80bfece279e34edf4e6c91c21d37996e3ee7
   JanTvrdik/herdr-command-palette@eab940018c2135ac23718efa11e23e9dddcd2a75
