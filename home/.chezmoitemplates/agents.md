@@ -31,8 +31,10 @@ Before project work, read `~/workspace/second-brain/projects/<project>/agent-mem
 ## Writing MRs and Docs
 
 - Base MR/PR descriptions on the actual diff vs target, not session rework.
+- MR/PR descriptions: start with a TL;DR of a few bullets, from the user's perspective. The user is the end user, or the user of the interface that changes.
 - Avoid mentioning modules, vars, function names in in-code docs (moduledocs, docs etc). If you do always wrap them in `backticks`.
-- Docs/comments: explain why, not what. Don't lean on naming functions/modules. Keep them self-contained, no defensive hypotheticals.
+- Comments explain why. Explain what only when the code cannot show it clearly, such as a complex algorithm or a non-obvious workaround. A comment that restates the code, narrates the change ("now", "new", "changed to") or cites a ticket or conversation is a low finding, and its fix is to delete it, not to reword it.
+- Docs/comments: don't lean on naming functions/modules. Keep them self-contained, no defensive hypotheticals.
 - @moduledoc/@doc: The first line should ALWAYS be a short, title-like description. Leave an empty line, then the rest.
 - LOCAL docs first: use @doc (public functions) or a code comment (private functions or inline context) to document small business particularities/hacks.
 - Human-facing summaries (notes, reports, project pages): no code references (backticks, field names, internal labels). Link every ticket and MR, with its title or a short description of the task as the link text. No bare IDs.
