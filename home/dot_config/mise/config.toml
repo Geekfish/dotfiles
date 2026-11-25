@@ -7,5 +7,6 @@ go = "1.26.1"
 "aqua:remoteoss/dexter" = "latest"
 node = "latest"
 rust = "latest"
+glab = "1.130.0"
 
 [env]

@@ -4,6 +4,7 @@
 ALWAYS APPLY THIS TO EVERYTHING YOU DO.
 When reporting information to me, be extremely concise and sacrifice grammar for the sake of concision.
 Follow this rule also for: documentation, code comments, MR descriptions/comments, commits, Slack messages, Notion pages and anything else you write in human language.
+Concise does not mean dense or convoluted. The goal is readability. Use spacing, rich document structure and short sentences liberally.
 
 ### What to document
 Documenting the "Why" is always more important than the "What". Only document the "what" if it's very hard to deduct it from the code, like an non-obvious workaround.
@@ -12,9 +13,9 @@ When you write text to an external resource (file, commit, Notion page, etc), co
 What they see is the final output. Documentation should be self-contained in its local context (file, thread etc) or use concrete external references (e.g. a link).
 
 ### Formatting
-Use optimal formatting for easy reading. Use bullets, short sentences. Prefer active voice. Use correct punctuation, but avoid long complicated sentences (e.g. no `;` and `—`). Repeat the sentence subject if it makes things clearer.
+Use optimal formatting for easy reading. Use bullets, short sentences. Prefer active voice. Avoid long complicated sentences (e.g. no `;` and `—`). Repeat the sentence subject if it makes things clearer.
 
-Consider "titles" for complex bullet points, e.g `- *Use Titles*: for each bullet point write the "title" part in bolt, unless the point is short enough to not need a title.`
+Consider "titles" for complex bullet points, e.g `- **Use Titles**: for each bullet point write the "title" part in bold, unless the point is short enough to not need a title.`
 Don't split a bullet point and its explanation into separate same-level bullets. Merge them into one bullet or use nested bullets.
 
 If a chat reply holds several parallel items (reasons, gaps, options, steps), use a numbered or bulleted list, not a paragraph. Prose enumerations are hard for me to read. This overrides the simple-english plugin rule that replies use prose with no lists.
@@ -33,7 +34,7 @@ Before project work, read `~/workspace/second-brain/projects/<project>/agent-mem
 - Base MR/PR descriptions on the actual diff vs target, not session rework.
 - MR/PR descriptions: start with a TL;DR of a few bullets, from the user's perspective. The user is the end user, or the user of the interface that changes.
 - Avoid mentioning modules, vars, function names in in-code docs (moduledocs, docs etc). If you do always wrap them in `backticks`.
-- Comments explain why. Explain what only when the code cannot show it clearly, such as a complex algorithm or a non-obvious workaround. A comment that restates the code, narrates the change ("now", "new", "changed to") or cites a ticket or conversation is a low finding, and its fix is to delete it, not to reword it.
+- Comments explain why. Explain what only when the code cannot show it clearly, such as a complex algorithm or a non-obvious workaround. A comment that restates the code, narrates the change ("now", "new", "changed to") or cites a ticket or conversation is a low finding, and its fix is to delete it, not to reword it. A link to an upstream source is OK when it explains a workaround.
 - Docs/comments: don't lean on naming functions/modules. Keep them self-contained, no defensive hypotheticals.
 - @moduledoc/@doc: The first line should ALWAYS be a short, title-like description. Leave an empty line, then the rest.
 - LOCAL docs first: use @doc (public functions) or a code comment (private functions or inline context) to document small business particularities/hacks.
@@ -42,7 +43,7 @@ Before project work, read `~/workspace/second-brain/projects/<project>/agent-mem
 - Sign every MR/PR comment I approve for posting with this footer, on its own lines at the end:
   ```
   -----
-  Written by Claude on behalf of Eleni Lixourioti
+  Written by an LLM on behalf of Eleni Lixourioti
   ```
 - Public repos (issues, PRs, comments): always ask me whether to add that footer. Don't add it by default.
 
