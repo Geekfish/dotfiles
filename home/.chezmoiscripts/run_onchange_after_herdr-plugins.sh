@@ -6,11 +6,11 @@
 set -e
 type herdr > /dev/null || { echo "herdr not installed, skipping plugins"; exit 0; }
 plugins=(
-  plannotator/herdr-annotate@dd147a9faf5ab7d716a31abca070c80af508ffbc
+  plannotator/herdr-annotate@58e819b0ba4ce7dcf230ccb1335e1474ec055d79
   enekos/herdr-quick-actions@e9305cab44b766952ad8aafaa0a69bd3f659e159
   tgdn/herdr-caffeinated@506e80bfece279e34edf4e6c91c21d37996e3ee7
   JanTvrdik/herdr-command-palette@eab940018c2135ac23718efa11e23e9dddcd2a75
-  senna-lang/herdr-agent-usage@d42a94152dba27ccaf6caf18b2733207197c8307
+  senna-lang/herdr-agent-usage@c0c74f5c5ad40c92d87fc62c38580940109d4ef2
   Geekfish/herdr-keep-awake
 )
 installed=$(herdr plugin list)
